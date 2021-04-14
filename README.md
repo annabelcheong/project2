@@ -37,12 +37,12 @@ e.g. Website format: 2 columns, with dimensions: col-md-5, col-md-7
 	col-md-5 column: paragraph explaining the topic etc, underneath, have an interactive chart (2 charts- bar, bubble, a custom d3 chart, scatter graph- have y-axis (2 or more labels), x-axis (1 label: countries)), underneath, recommendations. 
 	col-md-7 column: An interactive map
 
-# Methodology and Approach 
+## Methodology and Approach 
 
 ***** INSERT TEXT *****
 
 
-# Challenges
+## Challenges
 
 ***** INSERT TEXT *****
 
