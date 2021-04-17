@@ -17,14 +17,10 @@
 - Dashboard page which is interactive (dropdown) and is supported with data visualisations (including a custom d3 non-standard chart, js library *not covered in the Data Analytics course, e.g. https://christinecha.github.io/choreographer-js/), created with the user in mind.
 - The dashboard will contain a visualisation with 3 views (i.e. at least 3 charts)
 
-# **** QUESTIONS TO THE TEACHER ****
-What is: 
-- A thick server that performs multiple manipulations on data in a database before visualization (must be approved)
-
 *************************
 # Project Overview
 ## Audience
-- Generalist? Travellers? Executives?
+- Data Analytics Students: Generalist
 
 ## Purpose 
 What is their role/job and why do they want to know the information?
