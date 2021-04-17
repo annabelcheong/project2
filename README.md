@@ -21,7 +21,8 @@ An event finder for all available events across the globe!
 *************************
 # Project Overview
 ## Audience
-- Data Analytics Students: Generalists (general public)
+- Generalist Data Analysts
+- General Public
 
 ## Purpose 
 The purpose of the website is to allow the general public to look up events (what/where/when).
