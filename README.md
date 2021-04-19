@@ -1,32 +1,39 @@
-# project2
+# Project 2
 
-## INSERT TITLE OF PROJECT 2 HERE ## 
+## 'ShowUp' ## 
+An event finder for all available events across the globe! 
 
 *************************
 # Team Members
-- Vanessa Juliana
-- Diane Yaneza
 - Annabel Cheong
+- Diane Yaneza
+- Vanessa Juliana
 
 *************************
-# Project Requirement
-- This project is completed using Python Flask, powered API, HTML/CSS, Javascript and the PostGres database. 
-
-- A combination of web scraping and Leaflet* is used. (*Choice of Plotly or Leaflet)
-- The dataset contains more than 100 rows. (The dataset in this project contains xxx rows)
-- Dashboard page which is interactive (dropdown) and is supported with data visualisations (including a custom d3 non-standard chart, js library *not covered in the Data Analytics course, e.g. https://christinecha.github.io/choreographer-js/), created with the user in mind.
-- The dashboard will contain a visualisation with 3 views (i.e. at least 3 charts)
+# Project Requirements
+- This project will use: 
+    * Python Flask, powered API, HTML/CSS, Javascript and the PostGres database.
+    * A combination of Plotly and Leaflet.    
+- This project will have a dataset that contains more than 100 rows.
+- There will be a dashboard page which is interactive (dropdown) and is supported with data visualisations (including a custom D3 non-standard chart, js library *not covered in the Data Analytics course, e.g. https://christinecha.github.io/choreographer-js/), created with the user in mind.
+- The dashboard will also contain a visualisation with 3 views (info panel, charts, and map).
 
 *************************
 # Project Overview
 ## Audience
-- Data Analytics Students: Generalist
+- Generalist Data Analysts
+- General Public
 
 ## Purpose 
-What is their role/job and why do they want to know the information?
+The purpose of the website is to allow the general public to look up events (what/where/when).
 
 ## Objective
-- What information is presented to the audience to allow then to achieve their purpose?
+The website will show events by: 
+- Category
+- Location
+- Date
+
+A user can look up any event they want and 'ShowUp'! 
 
 - Describe the deliverable. Draw out the skeleton of the page. 
 e.g. Website format: 2 columns, with dimensions: col-md-5, col-md-7
