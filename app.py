@@ -1,9 +1,8 @@
-from flask import Flask, render_template, redirect
+from flask import Flask, render_template, redirect, jsonify
 import sqlalchemy
 import events_flask
 import pandas as pd
 from sqlalchemy import create_engine, func
-from sqlalchemy.orm import Session
 import json
 
 
@@ -19,14 +18,12 @@ app = Flask(__name__)
 
 rds_connection_string = "postgres:postgres@localhost:5432/events_db"
 engine = create_engine(f'postgresql://{rds_connection_string}')
-session = Session(engine)
 
 @app.route("/")
 def home():
-    return "helloworld"
 
     # # Return template and data
-    # return render_template("index.html", mars=mars)
+    return render_template("index.html")
 
 @app.route("/api_events")
 def events():
