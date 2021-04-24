@@ -24,7 +24,10 @@ def events():
 
     events_info = pd.read_sql_table('events_table', engine) 
 
-    event_result = events_info.to_json(orient="records")
+    # event_result = events_info.to_json(orient="records")
+
+    # Copied script from 'events_flask.ipynb'
+    event_result = json.dumps(json.loads(events_info.to_json(orient = "records")), indent=4)
 
     return jsonify(event_result)
 
