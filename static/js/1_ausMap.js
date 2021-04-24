@@ -45,7 +45,7 @@ d3.json(geoData, function(response) {
     
     if (location) {
      
-      markers.addLayer(L.marker([location.coordinates[1], location.coordinates[0]])
+      markers.addLayer(L.marker([location.coordinates[1], location.coordinates[0]]) // long, lat
       .bindPopup(response1[i].descriptor));
     }
 
