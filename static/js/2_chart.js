@@ -1,20 +1,17 @@
 
 // var obj = JSON.parse("/api_events")
+// 'api_events'
 
+// event_data = "events.json"
 function BuildBubbleChart() {
-    d3.json("/api_events").then((data) => {
-       
-        console.log(data);
-        // console.log(hello.title);
-        console.log(data[16]);
-        console.log(data[17]);
-        console.log(data[18]);
-        console.log(data[19]);
+    
 
-       
-        // console.log(data.title);
 
-        // console.log(data.map(elem => elem.id));
+
+    d3.json('api_events').then((data) => {
+        // console.log(data);
+        
+        console.log(data.map(elem => elem.id));
         
         // Filter data by
     
