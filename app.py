@@ -28,7 +28,7 @@ def events():
 
     # Copied script from 'events_flask.ipynb'
     event_result = json.dumps(json.loads(events_info.to_json(orient = "records")), indent=4)
-
+    event_result = json.loads(event_result)
     return jsonify(event_result)
 
 
