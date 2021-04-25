@@ -17,7 +17,7 @@
 
 // Creating map object
 // * Co-ordinates and zoom show Australia
-var myMap = L.map("map-id", {
+var myMap = L.map("map", {
   center: [-25.58, 134.50],
   zoom: 4
 });
