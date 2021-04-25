@@ -62,50 +62,14 @@
                       <!-- <img class="logo" src="logo.png"> -->
                     </div>
                   </div>
-                  <!-- End Header Section -->
+                  <!-- End of Header Section -->
 
                   <!-- Filters section -->
                   <div class="container">
                     <div class="container">
                       <div class="row">
-                        <div class="col-md order-last">
-                          <br>
-                          <div class="dropdown calendar">
-                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              ShowDate (select from calendar)
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                              <a class="dropdown-item" href="#">This is a placeholder</a>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-md">
-                          <br>
-                          <!-- <select class="form-select " aria-label=".form-select-lg example">
-                            <option selected>ShowType (select category)</option>
-                            <option value="comm">community</option>
-                            <option value="arts">performing-arts</option>
-                            <option value="sports">sports</option>
-                            <option value="concerts">concerts</option>
-                            <option value="fests">festivals</option>
-                            <option value="expos">expos</option>
-                            <option value="conf">conferences</option>
-                          </select> -->
-                          <div class="dropdown type">
-                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              ShowType (select show category)
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                              <a class="dropdown-item" href="#">community</a>
-                              <a class="dropdown-item" href="#">performing-arts</a>
-                              <a class="dropdown-item" href="#">sports</a>
-                              <a class="dropdown-item" href="#">concerts</a>
-                              <a class="dropdown-item" href="#">festivals</a>
-                              <a class="dropdown-item" href="#">conferences</a>
-                              <a class="dropdown-item" href="#">expos</a>
-                            </div>
-                          </div>
-                        </div>
+
+                        <!-- Location filter -->
                         <div class="col-md order-first">
                           <br>
                           <!-- <select class="form-select form-select-lg mb-4" aria-label=".form-select-lg example">
@@ -134,13 +98,59 @@
                             </div>
                           </div>
                         </div>
+                        <!-- End location filter -->
+
+                        <!-- Category filter -->
+                        <div class="col-md">
+                          <br>
+                          <!-- <select class="form-select " aria-label=".form-select-lg example">
+                            <option selected>ShowType (select category)</option>
+                            <option value="comm">community</option>
+                            <option value="arts">performing-arts</option>
+                            <option value="sports">sports</option>
+                            <option value="concerts">concerts</option>
+                            <option value="fests">festivals</option>
+                            <option value="expos">expos</option>
+                            <option value="conf">conferences</option>
+                          </select> -->
+                          <div class="dropdown type">
+                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              ShowType (select show category)
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                              <a class="dropdown-item" href="#">community</a>
+                              <a class="dropdown-item" href="#">performing-arts</a>
+                              <a class="dropdown-item" href="#">sports</a>
+                              <a class="dropdown-item" href="#">concerts</a>
+                              <a class="dropdown-item" href="#">festivals</a>
+                              <a class="dropdown-item" href="#">conferences</a>
+                              <a class="dropdown-item" href="#">expos</a>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- End category filter -->
+
+                        <!-- Calendar Filter -->
+                        <div class="col-md order-last">
+                          <br>
+                          <div class="dropdown calendar">
+                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              ShowDate (select from calendar)
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                              <a class="dropdown-item" href="#">This is a placeholder</a>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- End calendar filter -->
+
                       </div>
                     </div>
-                    </div>
-
+                  </div>
+                  <!-- End of Filters section" -->
                   
+                  <!-- Map section -->
                   <br>
-
                     <div class="col-md-12">
                         <div class="container-fluid" margin-top: 40px style="background-color: rgb(255, 255, 255)">
                             <h4><br>ShowMap</h4><hr>
@@ -150,6 +160,9 @@
                             <br>        
                         </div>
                     </div>
+                    <!-- End of Map section -->
+
+                    <!-- Chart section -->
                     <div class="col-md-12">
                         <div class="container-fluid" margin-top: 40px style="background-color: rgb(255, 255, 255)">
                             <h4><br>ShowChart</h4><hr>
@@ -158,6 +171,9 @@
                             <br>        
                         </div>
                     </div>
+                    <!-- End of Chart section -->
+
+                    <!-- Table section -->
                     <div class="col-md-12">
                         <div class="container-fluid" margin-top: 40px style="background-color: rgb(255, 255, 255)">
                             <h4><br>ShowTable</h4><hr>
@@ -165,7 +181,7 @@
                             <p> <br> This section will contain a table of the filtered data. The columns will be Event Name, Event Description, Event Address. </p><br>
                             <div class="col-md-10">
                               <div id="table-area" class="">
-                                <table id="ufo-table" class="table table-striped">
+                                <table id="events-table" class="table table-striped">
                                   <thead>
                                     <tr>
                                       <th class="table-head">ShowName</th>
@@ -179,7 +195,8 @@
                             </div>
                             <br>        
                         </div>
-                    </div>   
+                    </div>
+                    <!-- End of Table section -->
                 </div>
             </div>
             
