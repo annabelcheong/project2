@@ -25,7 +25,7 @@
 <!-- navbar -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid" >
-                <a class="navbar-brand" color: rgb(20, 20, 20) href="../templates/index.html">ShowUp</a>
+                <a class="navbar-brand" color: rgb(20, 20, 20) href="../templates/index.html"><strong>ShowUp</strong></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon" ></span>
                 </button>
@@ -59,63 +59,35 @@
                       <div class="carousel-item active">
                         <img class="d-block w-100" src="https://www.cirquedusoleil.com/-/media/cds/images/shows/axel/hero/axel_hero_test_a_desktop_1920x710.jpg?db=web&la=en&vs=1&hash=55AB2E070A3C3EBAB5147086201564DF86833825" alt="First slide">
                       </div>
-                      <!-- <img class="logo" src="logo.png"> -->
+                      <img class="logo" src="logo.png">
                     </div>
                   </div>
-                  <!-- End of Header Section -->
+                  <!-- End Header Section -->
 
                   <!-- Filters section -->
-                  <div class="container">
+                  <div class="container-fluid">
                     <div class="container">
                       <div class="row">
-
-                        <!-- Location filter -->
-                        <div class="col-md order-first">
+                        <div class="col order-last">
                           <br>
-                          <!-- <select class="form-select form-select-lg mb-4" aria-label=".form-select-lg example">
-                            <option selected>ShowState (select location)</option>
-                            <option value="1">WA</option>
-                            <option value="2">SA</option>
-                            <option value="3">QLD</option>
-                            <option value="4">NSW</option>
-                            <option value="4">ACT</option>
-                            <option value="5">VIC</option>
-                            <option value="6">TAS</option>
-                            <option value="7">NT</option>
-                          </select> -->
-                          <div class="dropdown state">
-                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              ShowState (select show location)
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                              <a class="dropdown-item" href="#">WA</a>
-                              <a class="dropdown-item" href="#">SA</a>
-                              <a class="dropdown-item" href="#">QLD</a>
-                              <a class="dropdown-item" href="#">NSW</a>
-                              <a class="dropdown-item" href="#">VIC</a>
-                              <a class="dropdown-item" href="#">TAS</a>
-                              <a class="dropdown-item" href="#">NT</a>
-                            </div>
+                          <div class="dropdown-calendar">
                           </div>
                         </div>
-                        <!-- End location filter -->
-
-                        <!-- Category filter -->
-                        <div class="col-md">
+                        <div class="col">
                           <br>
-                          <!-- <select class="form-select " aria-label=".form-select-lg example">
+                          <select class="form-select" aria-label="Default select example">
                             <option selected>ShowType (select category)</option>
-                            <option value="comm">community</option>
-                            <option value="arts">performing-arts</option>
-                            <option value="sports">sports</option>
-                            <option value="concerts">concerts</option>
-                            <option value="fests">festivals</option>
-                            <option value="expos">expos</option>
-                            <option value="conf">conferences</option>
-                          </select> -->
-                          <div class="dropdown type">
-                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              ShowType (select show category)
+                            <option value="1">community</option>
+                            <option value="2">performing-arts</option>
+                            <option value="3">sports</option>
+                            <option value="4">concerts</option>
+                            <option value="5">festivals</option>
+                            <option value="6">expos</option>
+                            <option value="7">conferences</option>
+                          </select>
+                          <!-- <div class="dropdown type"> -->
+                            <!-- <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              ShowType (select category)
                             </a>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                               <a class="dropdown-item" href="#">community</a>
@@ -126,31 +98,43 @@
                               <a class="dropdown-item" href="#">conferences</a>
                               <a class="dropdown-item" href="#">expos</a>
                             </div>
-                          </div>
+                          </div> -->
                         </div>
-                        <!-- End category filter -->
-
-                        <!-- Calendar Filter -->
-                        <div class="col-md order-last">
+                        <div class="col order-first">
                           <br>
-                          <div class="dropdown calendar">
+                          <select class="form-select" aria-label="Default select example">
+                            <option selected>ShowState (select location)</option>
+                            <option value="1">WA</option>
+                            <option value="2">SA</option>
+                            <option value="3">QLD</option>
+                            <option value="4">NSW</option>
+                            <option value="4">ACT</option>
+                            <option value="5">VIC</option>
+                            <option value="6">TAS</option>
+                            <option value="7">NT</option>
+                          </select>
+                          <!-- <div class="dropdown state">
                             <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              ShowDate (select from calendar)
+                              ShowState (select location)
                             </a>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                              <a class="dropdown-item" href="#">This is a placeholder</a>
+                              <a class="dropdown-item" href="#">WA</a>
+                              <a class="dropdown-item" href="#">SA</a>
+                              <a class="dropdown-item" href="#">QLD</a>
+                              <a class="dropdown-item" href="#">NSW</a>
+                              <a class="dropdown-item" href="#">VIC</a>
+                              <a class="dropdown-item" href="#">TAS</a>
+                              <a class="dropdown-item" href="#">NT</a>
                             </div>
-                          </div>
+                          </div> -->
                         </div>
-                        <!-- End calendar filter -->
-
                       </div>
                     </div>
-                  </div>
-                  <!-- End of Filters section" -->
+                    </div>
+
                   
-                  <!-- Map section -->
                   <br>
+
                     <div class="col-md-12">
                         <div class="container-fluid" margin-top: 40px style="background-color: rgb(255, 255, 255)">
                             <h4><br>ShowMap</h4><hr>
@@ -160,43 +144,27 @@
                             <br>        
                         </div>
                     </div>
-                    <!-- End of Map section -->
-
-                    <!-- Chart section -->
                     <div class="col-md-12">
                         <div class="container-fluid" margin-top: 40px style="background-color: rgb(255, 255, 255)">
                             <h4><br>ShowChart</h4><hr>
                             <div id="chart"></div>
                             <p> <br> This section will contain a bubble chart that shows the filtered events. Each event bubble is represented by that particular event's rank. </p><br>
-                            <br>        
+                            <br>
+                            
+                            <div id="bubble"></div>
+
+
+
                         </div>
                     </div>
-                    <!-- End of Chart section -->
-
-                    <!-- Table section -->
                     <div class="col-md-12">
                         <div class="container-fluid" margin-top: 40px style="background-color: rgb(255, 255, 255)">
                             <h4><br>ShowTable</h4><hr>
                             <div id="table"></div>
                             <p> <br> This section will contain a table of the filtered data. The columns will be Event Name, Event Description, Event Address. </p><br>
-                            <div class="col-md-10">
-                              <div id="table-area" class="">
-                                <table id="events-table" class="table table-striped">
-                                  <thead>
-                                    <tr>
-                                      <th class="table-head">ShowName</th>
-                                      <th class="table-head">ShowDescription</th>
-                                      <th class="table-head">ShowAddress</th>
-                                    </tr>
-                                  </thead>
-                                  <tbody></tbody>
-                                </table>
-                              </div>
-                            </div>
                             <br>        
                         </div>
-                    </div>
-                    <!-- End of Table section -->
+                    </div>   
                 </div>
             </div>
             
@@ -217,6 +185,9 @@
 
         <!-- Marker plugin -->
         <script type="text/javascript" src="https://unpkg.com/leaflet.markercluster@1.0.3/dist/leaflet.markercluster.js"></script>
+
+        <!-- Plotly JavaScript -->
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
         <!-- Our JS -->
         
