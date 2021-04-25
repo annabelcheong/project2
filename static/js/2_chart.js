@@ -25,15 +25,22 @@ function BuildBubbleChart() {
         rank = data.map((elem) => elem.rank = +elem.rank);
         console.log(rank);
 
+        var inverse_rank = 100 - rank;
+        console.log(inverse_rank);
+
         start_date = data.map((elem) => elem.start_date = new Date(elem.start_date));
             console.log(start_date);
 
 
+        var inverse_size = 100-rank;
+        // inverse_size = +inverse_size;
+        console.log(inverse_size);
+        console.log(rank+100);
 
         var trace = {
-            x: category,
+            x: start_date,
             y: rank,
-            text: title_name, 
+            text: title_name,  
             mode: 'markers',
             marker: {
                 size: rank, 
@@ -46,7 +53,7 @@ function BuildBubbleChart() {
         var data = [trace];
 
         var layout = {
-            xaxis:{title:"Category"},
+            xaxis:{title:"Date"},
             yaxis:{title:"Ranking"},
             showlegend: false,
             height: 600,
