@@ -5,48 +5,59 @@
 // event_data = "events.json"
 function BuildBubbleChart() {
     
-
-
-
     d3.json('api_events').then((data) => {
-        console.log(data);
+        // console.log(data);
         
         // console.log(data.map(elem => elem.id));
-        id = data.map(elem => elem.id);
+        // id = data.map(elem => elem.id);
 
         // console.log(data.map(elem => elem.title));
         title = data.map(elem => elem.title);
 
-        coords = data.map(elem => elem.coords);
+        // coords = data.map(elem => elem.coords);
 
-        category = data.map(elem => elem.category);
+        // category = data.map(elem => elem.category);
 
-        venue_name = data.map(elem => elem.venue_name);
+        // venue_name = data.map(elem => elem.venue_name);
 
         // Parse to numeric value
         rank = data.map((elem) => elem.rank = +elem.rank);
+        // console.log(rank);
 
-        start_date = data.map(elem => elem.start_date);
+        start_date = data.map((elem) => elem.start_date = new Date(elem.start_date));
+            console.log(start_date);
 
-        end_date = data.map(elem => elem.end_date);
-        
 
-        
-        // Filter data by
+
+        var trace = {
+            x: start_date,
+            y: rank,
+            text: otu_labs,
+            mode: 'markers',
+            marker: {
+                size: rank, 
+                color: rank, // Colours grouped by sample_vals i.e. In this instance, grouped by size
+                colorscale: 'Portland'
+            }
+            
+        };
     
-        // var mappingArray = data.map((elem)=>elem.id);
-        // console.log(mappingArray);
+        var data = [trace];
+
+        var layout = {
+            xaxis:{title:"Event Date"},
+            yaxis:{title:"Ranking"},
+            showlegend: false,
+            height: 600,
+            width: 1200
+        };
     
+        Plotly.newPlot("bubble", data, layout);
+
+
+
+     
     });
-
-    // d3.json('/api_events'), function(data) {
-
-    //     console.log(data);
-
-    // }
-
-
-
 
 }
 
