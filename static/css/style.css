@@ -52,12 +52,12 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light {
 }
 
 .dropdown-toggle {
-    background-color:  rgb(99, 99, 99);
-    border-color: rgb(99, 99, 99);
+    background-color:  rgb(35, 35, 35);
+    border-color: rgb(35, 35, 35);
 }
 
 .dropdown-toggle:hover {
-    background-color: rgb(99, 99, 99);
+    background-color: rgb(35, 35, 35);
 }
 
 .dropdownMenuLink {
@@ -76,11 +76,11 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light {
 @media(max-width:768px){
     div.container-fluid{
         color: rgb(35, 35, 35);
-        background-color: rgb(35, 35, 35)S;
+        background-color: rgb(35, 35, 35);
     }
 }
 
-/* .first image {
+.first image {
     float: left; 
     margin : 5px;
 }
@@ -88,7 +88,7 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light {
 .text {
     float: right;
 
-} */
+} 
 
 img.logo {
   height: 90px;
