@@ -19,6 +19,18 @@ function BuildBubbleChart() {
         var category = data.map(elem => elem.category);
         console.log(category);
 
+
+        //////////////////////////////////
+        //// Filtered array for category 'expos'
+        expo_data = data.filter(data => data.category == "expos");
+        console.log(expo_data);
+
+
+
+
+        ///////////////////////////////////
+        
+        
         var venue_name = data.map(elem => elem.venue_name);
 
         // Parse to numeric value
