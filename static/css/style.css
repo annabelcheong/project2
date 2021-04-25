@@ -76,6 +76,11 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light {
     }
 }
 
+.form-select {
+    width: max-content;
+}
+
+
 .first image {
     float: left; 
     margin : 5px;

@@ -25,7 +25,7 @@
 <!-- navbar -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid" >
-                <a class="navbar-brand" color: rgb(20, 20, 20) href="../Assets/Landing Page.html">ShowUp</a>
+                <a class="navbar-brand" color: rgb(20, 20, 20) href="../Assets/Landing Page.html"><strong>ShowUp</strong></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon" ></span>
                 </button>
@@ -62,22 +62,77 @@
                       <img class="logo" src="logo.png">
                     </div>
                   </div>
-
                   <!-- End Header Section -->
-                  <div class="dropdown show">
-                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      ShowState (select your location)
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                      <a class="dropdown-item" href="#">WA</a>
-                      <a class="dropdown-item" href="#">SA</a>
-                      <a class="dropdown-item" href="#">QLD</a>
-                      <a class="dropdown-item" href="#">NSW</a>
-                      <a class="dropdown-item" href="#">VIC</a>
-                      <a class="dropdown-item" href="#">TAS</a>
-                      <a class="dropdown-item" href="#">NT</a>
+
+                  <!-- Filters section -->
+                  <div class="container-fluid">
+                    <div class="container">
+                      <div class="row">
+                        <div class="col order-last">
+                          <br>
+                          <div class="dropdown-calendar">
+                          </div>
+                        </div>
+                        <div class="col">
+                          <br>
+                          <select class="form-select" aria-label="Default select example">
+                            <option selected>ShowType (select category)</option>
+                            <option value="1">community</option>
+                            <option value="2">performing-arts</option>
+                            <option value="3">sports</option>
+                            <option value="4">concerts</option>
+                            <option value="5">festivals</option>
+                            <option value="6">expos</option>
+                            <option value="7">conferences</option>
+                          </select>
+                          <!-- <div class="dropdown type"> -->
+                            <!-- <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              ShowType (select category)
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                              <a class="dropdown-item" href="#">community</a>
+                              <a class="dropdown-item" href="#">performing-arts</a>
+                              <a class="dropdown-item" href="#">sports</a>
+                              <a class="dropdown-item" href="#">concerts</a>
+                              <a class="dropdown-item" href="#">festivals</a>
+                              <a class="dropdown-item" href="#">conferences</a>
+                              <a class="dropdown-item" href="#">expos</a>
+                            </div>
+                          </div> -->
+                        </div>
+                        <div class="col order-first">
+                          <br>
+                          <select class="form-select" aria-label="Default select example">
+                            <option selected>ShowState (select location)</option>
+                            <option value="1">WA</option>
+                            <option value="2">SA</option>
+                            <option value="3">QLD</option>
+                            <option value="4">NSW</option>
+                            <option value="4">ACT</option>
+                            <option value="5">VIC</option>
+                            <option value="6">TAS</option>
+                            <option value="7">NT</option>
+                          </select>
+                          <!-- <div class="dropdown state">
+                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              ShowState (select location)
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                              <a class="dropdown-item" href="#">WA</a>
+                              <a class="dropdown-item" href="#">SA</a>
+                              <a class="dropdown-item" href="#">QLD</a>
+                              <a class="dropdown-item" href="#">NSW</a>
+                              <a class="dropdown-item" href="#">VIC</a>
+                              <a class="dropdown-item" href="#">TAS</a>
+                              <a class="dropdown-item" href="#">NT</a>
+                            </div>
+                          </div> -->
+                        </div>
+                      </div>
                     </div>
-                  </div>
+                    </div>
+
+                  
                   <br>
 
                     <div class="col-md-12">
@@ -128,6 +183,12 @@
         <script type="text/javascript" src="static/js/1_ausMap.js"></script>
         <script type="text/javascript" src="static/js/2_chart.js"></script>
         <script type="text/javascript" src="static/js/3_table.js"></script>
+
+        <!-- Calendar js -->
+        <link rel="stylesheet" type="text/css" href="css/lightpick.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+        <script src="lightpick.js"></script>
+        <script> var picker = new Lightpick({ field: document.getElementById('datepicker') });</script>
 
  <!-- end of page content -->                  
     </body>

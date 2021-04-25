@@ -1,5 +1,20 @@
 // Logic for the map containing markers of events 
 
+// Logic for calendar dropdown
+// var picker = new Lightpick({
+//   field: document.getElementById('dropdown-calendar'),
+//   singleDate: false,
+//   minDate: moment().startOf('month').add(7, 'day'),
+//   maxDate: moment().endOf('month').subtract(7, 'day'),
+//   onSelect: function(start, end){
+//       var str = '';
+//       str += start ? start.format('Do MMMM YYYY') + ' to ' : '';
+//       str += end ? end.format('Do MMMM YYYY') : '...';
+//       document.getElementById('result-6').innerHTML = str;
+//   }
+// });
+
+
 // Creating map object
 // * Co-ordinates and zoom show Australia
 var myMap = L.map("map-id", {
