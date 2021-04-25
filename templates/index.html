@@ -59,35 +59,41 @@
                       <div class="carousel-item active">
                         <img class="d-block w-100" src="https://www.cirquedusoleil.com/-/media/cds/images/shows/axel/hero/axel_hero_test_a_desktop_1920x710.jpg?db=web&la=en&vs=1&hash=55AB2E070A3C3EBAB5147086201564DF86833825" alt="First slide">
                       </div>
-                      <img class="logo" src="logo.png">
+                      <!-- <img class="logo" src="logo.png"> -->
                     </div>
                   </div>
                   <!-- End Header Section -->
 
                   <!-- Filters section -->
-                  <div class="container-fluid">
+                  <div class="container">
                     <div class="container">
                       <div class="row">
                         <div class="col-md order-last">
                           <br>
-                          <div class="dropdown-calendar">
+                          <div class="dropdown calendar">
+                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              ShowDate (select from calendar)
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                              <a class="dropdown-item" href="#">This is a placeholder</a>
+                            </div>
                           </div>
                         </div>
                         <div class="col-md">
                           <br>
-                          <select class="form-select form-select-lg mb-4" aria-label=".form-select-lg example">
+                          <!-- <select class="form-select " aria-label=".form-select-lg example">
                             <option selected>ShowType (select category)</option>
-                            <option value="1">community</option>
-                            <option value="2">performing-arts</option>
-                            <option value="3">sports</option>
-                            <option value="4">concerts</option>
-                            <option value="5">festivals</option>
-                            <option value="6">expos</option>
-                            <option value="7">conferences</option>
-                          </select>
-                          <!-- <div class="dropdown type"> -->
-                            <!-- <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              ShowType (select category)
+                            <option value="comm">community</option>
+                            <option value="arts">performing-arts</option>
+                            <option value="sports">sports</option>
+                            <option value="concerts">concerts</option>
+                            <option value="fests">festivals</option>
+                            <option value="expos">expos</option>
+                            <option value="conf">conferences</option>
+                          </select> -->
+                          <div class="dropdown type">
+                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              ShowType (select show category)
                             </a>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                               <a class="dropdown-item" href="#">community</a>
@@ -98,11 +104,11 @@
                               <a class="dropdown-item" href="#">conferences</a>
                               <a class="dropdown-item" href="#">expos</a>
                             </div>
-                          </div> -->
+                          </div>
                         </div>
                         <div class="col-md order-first">
                           <br>
-                          <select class="form-select form-select-lg mb-4" aria-label=".form-select-lg example">
+                          <!-- <select class="form-select form-select-lg mb-4" aria-label=".form-select-lg example">
                             <option selected>ShowState (select location)</option>
                             <option value="1">WA</option>
                             <option value="2">SA</option>
@@ -112,10 +118,10 @@
                             <option value="5">VIC</option>
                             <option value="6">TAS</option>
                             <option value="7">NT</option>
-                          </select>
-                          <!-- <div class="dropdown state">
+                          </select> -->
+                          <div class="dropdown state">
                             <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              ShowState (select location)
+                              ShowState (select show location)
                             </a>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                               <a class="dropdown-item" href="#">WA</a>
@@ -126,7 +132,7 @@
                               <a class="dropdown-item" href="#">TAS</a>
                               <a class="dropdown-item" href="#">NT</a>
                             </div>
-                          </div> -->
+                          </div>
                         </div>
                       </div>
                     </div>
