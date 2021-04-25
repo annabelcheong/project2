@@ -16,7 +16,7 @@ function BuildBubbleChart() {
 
         // coords = data.map(elem => elem.coords);
 
-        // category = data.map(elem => elem.category);
+        category = data.map(elem => elem.category);
 
         // venue_name = data.map(elem => elem.venue_name);
 
@@ -30,13 +30,13 @@ function BuildBubbleChart() {
 
 
         var trace = {
-            x: start_date,
+            x: title,
             y: rank,
-            text: otu_labs,
+            text: category,
             mode: 'markers',
             marker: {
                 size: rank, 
-                color: rank, // Colours grouped by sample_vals i.e. In this instance, grouped by size
+                color: rank, // Colours grouped by rank i.e. In this instance, grouped by size
                 colorscale: 'Portland'
             }
             
