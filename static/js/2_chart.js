@@ -25,7 +25,11 @@ function BuildBubbleChart() {
         expo_data = data.filter(data => data.category == "expos");
         console.log(expo_data);
 
-
+        // x-axis variable for category
+        expo_date = expo_data.map(elem => elem.start_date = new Date(elem.start_date))
+        
+        // y-axis variable for category
+        expo_venue_name = expo_data.map(elem => elem.venue_name);
 
 
         ///////////////////////////////////
@@ -49,16 +53,16 @@ function BuildBubbleChart() {
         console.log(inverse_size);
 
         var trace = {
-            x: start_date,
-            y: venue_name,
+            x: expo_date,
+            y: expo_venue_name,
             text: title_name,  
             mode: 'markers',
             marker: {
                 size: rank, 
                 color: rank, // Colours grouped by rank i.e. In this instance, grouped by size
                 colorscale: 'Portland'
-            }
-            
+            },
+            name: 'expos'
         };
     
         var data = [trace];
