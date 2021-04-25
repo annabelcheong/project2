@@ -68,14 +68,14 @@
                   <div class="container-fluid">
                     <div class="container">
                       <div class="row">
-                        <div class="col order-last">
+                        <div class="col-md order-last">
                           <br>
                           <div class="dropdown-calendar">
                           </div>
                         </div>
-                        <div class="col">
+                        <div class="col-md">
                           <br>
-                          <select class="form-select" aria-label="Default select example">
+                          <select class="form-select form-select-lg mb-4" aria-label=".form-select-lg example">
                             <option selected>ShowType (select category)</option>
                             <option value="1">community</option>
                             <option value="2">performing-arts</option>
@@ -100,9 +100,9 @@
                             </div>
                           </div> -->
                         </div>
-                        <div class="col order-first">
+                        <div class="col-md order-first">
                           <br>
-                          <select class="form-select" aria-label="Default select example">
+                          <select class="form-select form-select-lg mb-4" aria-label=".form-select-lg example">
                             <option selected>ShowState (select location)</option>
                             <option value="1">WA</option>
                             <option value="2">SA</option>
@@ -157,6 +157,20 @@
                             <h4><br>ShowTable</h4><hr>
                             <div id="table"></div>
                             <p> <br> This section will contain a table of the filtered data. The columns will be Event Name, Event Description, Event Address. </p><br>
+                            <div class="col-md-10">
+                              <div id="table-area" class="">
+                                <table id="ufo-table" class="table table-striped">
+                                  <thead>
+                                    <tr>
+                                      <th class="table-head">ShowName</th>
+                                      <th class="table-head">ShowDescription</th>
+                                      <th class="table-head">ShowAddress</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody></tbody>
+                                </table>
+                              </div>
+                            </div>
                             <br>        
                         </div>
                     </div>   
