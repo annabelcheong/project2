@@ -34,25 +34,59 @@ function BuildBubbleChart() {
         .attr("value", function (d) {return d;})
 
 
-        category.forEach((catName) => {
-            console.log(catName);
+        // Event listener for category dropdown
+        d3.select("#selCategory").on("change", function(d) {
+            
+            var selectedOption = d3.select(this).property("value")
+
+            // Run function updateBubbleChart with selectedOption
+            updateBubbleChart(selectedOption)
+
+        });
+        
 
 
+        function updateBubbleChart(selectedGroup){
+                // Add in bubble chart code
+
+                //// Filtered array for category 'conferences'
+                filtCatData = data.filter(data => data.category == selectedGroup);
+
+                // x-axis variable for category
+                cat_date = filtCatData.map(elem => elem.start_date = new Date(elem.start_date));
+
+                // y-axis variable for category
+                cat_venue_name = filtCatData.map(elem => elem.venue_name);
+
+                var trace_cat = {
+                    x: cat_date,
+                    y: cat_venue_name,
+                    text: title_name,
+                    mode: 'markers',
+                    marker: {
+                        size: rank,
+                        color: "#119dff" // blue
+                        //rank, // Colours grouped by rank i.e. In this instance, grouped by size
+                        // colorscale: 'Portland'
+                    },
+                    name: selectedGroup
+                };
+
+                var data = [trace_cat];
 
 
-        })
+                // LAYOUT //
+                var layout = {
+                    xaxis: { title: "Date", automargin: true },
+                    yaxis: { title: "", automargin: true },
+                    showlegend: true,
+                    height: 600,
+                    width: 1200
+                };
 
+                Plotly.newPlot("bubble", data, layout);
 
-
-
-
-
-
-
-
-
-
-
+        };
 
 
         //////////////////////////////////
@@ -216,6 +250,6 @@ function BuildBubbleChart() {
 
     });
 
-}
+};
 
 BuildBubbleChart();
