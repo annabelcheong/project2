@@ -77,9 +77,10 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light {
 }
 
 .form-select {
-    width: max-content;
+    width: 250px;
     color: blue;
 }
+
 
 
 .first image {
