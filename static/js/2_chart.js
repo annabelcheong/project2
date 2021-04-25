@@ -9,9 +9,21 @@ function BuildBubbleChart() {
 
 
     d3.json('api_events').then((data) => {
-        // console.log(data);
+        console.log(data);
         
-        console.log(data.map(elem => elem.id));
+
+        // console.log(data.map(elem => elem.id));
+        id = data.map(elem => elem.id);
+
+        // console.log(data.map(elem => elem.title));
+        title = data.map(elem => elem.title);
+
+        category = data.map(elem => elem.category);
+
+        venue_name = data.map(elem => elem.venue_name);
+
+        rank = data.map(elem => elem.rank);
+
         
         // Filter data by
     
