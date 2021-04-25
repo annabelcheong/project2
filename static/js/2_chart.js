@@ -12,17 +12,18 @@ function BuildBubbleChart() {
         // id = data.map(elem => elem.id);
 
         // console.log(data.map(elem => elem.title));
-        title = data.map(elem => elem.title);
+        title_name = data.map(elem => elem.title);
 
         // coords = data.map(elem => elem.coords);
 
         category = data.map(elem => elem.category);
+        console.log(category);
 
-        // venue_name = data.map(elem => elem.venue_name);
+        venue_name = data.map(elem => elem.venue_name);
 
         // Parse to numeric value
         rank = data.map((elem) => elem.rank = +elem.rank);
-        // console.log(rank);
+        console.log(rank);
 
         start_date = data.map((elem) => elem.start_date = new Date(elem.start_date));
             console.log(start_date);
@@ -30,9 +31,9 @@ function BuildBubbleChart() {
 
 
         var trace = {
-            x: title,
+            x: category,
             y: rank,
-            text: category,
+            text: title_name, 
             mode: 'markers',
             marker: {
                 size: rank, 
@@ -45,7 +46,7 @@ function BuildBubbleChart() {
         var data = [trace];
 
         var layout = {
-            xaxis:{title:"Event Date"},
+            xaxis:{title:"Category"},
             yaxis:{title:"Ranking"},
             showlegend: false,
             height: 600,
@@ -54,9 +55,6 @@ function BuildBubbleChart() {
     
         Plotly.newPlot("bubble", data, layout);
 
-
-
-     
     });
 
 }
