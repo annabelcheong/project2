@@ -22,7 +22,7 @@ def events():
     # Option 1
     rds_connection_string = "postgres:postgres@localhost:5432/events_db"
     
-    #Option 2
+    # Option 2
     # rds_connection_string = "postgres:309Malanday!@localhost:5432/events_db"
 
     engine = create_engine(f'postgresql://{rds_connection_string}')

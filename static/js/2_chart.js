@@ -19,6 +19,41 @@ function BuildBubbleChart() {
         var category = data.map(elem => elem.category);
         console.log(category);
 
+        ///////////////////////////
+        // DROP DOWN FOR CATEGORY
+        ///////////////////////////
+
+        var catOptions = ["expos","conferences","community","sports","performing-arts","festivals","concerts"]
+
+        d3.select("#selCategory")
+        .selectAll('myOptions') //create class 
+        .data(catOptions)
+        .enter()
+        .append('option')
+        .text(function (d) { return d; }) // text showed in the dropdown
+        .attr("value", function (d) {return d;})
+
+
+        category.forEach((catName) => {
+            console.log(catName);
+
+
+
+
+        })
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         //////////////////////////////////
         //// Filtered array for category 'expos'
