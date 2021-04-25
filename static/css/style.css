@@ -9,6 +9,9 @@ html {
 height: 100%;
 } */
   
+#map {
+  height: 10%;
+}
 
 h2 {
     color: rgb(35, 35, 35);

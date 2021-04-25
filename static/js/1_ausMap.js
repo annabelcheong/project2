@@ -17,10 +17,10 @@
 
 // Creating map object
 // * Co-ordinates and zoom show Australia
-var myMap = L.map("map-id", {
+var myMap = L.map("map", {
   center: [-25.58, 134.50],
   zoom: 4
-});
+  });
 
 // Adding tile layer
 L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
@@ -40,33 +40,51 @@ L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 // 1. Pull out co-ordinates from PostGRES (in list or dictionary form)
 // 2. Store co-ordinates into location via for loop
 
-// Load in GeoJson data 
-var geoData = "./data/interest.geojson";
+// Load in coordinates data from @app.route("/api_events")
+var appRoute = 'api_events';
 
-//Grab d3 data
-d3.json(geoData, function(response) {
+//Grab data with d3
+d3.json(appRoute).then((data) => {
 
-  response1 = response.features;
+  // CHECK data is loaded
+  console.log(data);
 
-  console.log(response1);
+  // Pull data for locations
 
-  // Define markers
+  // Create markers for cluster group
   var markers = L.markerClusterGroup();
 
-  for (var i = 0; i < response1.length; i++) {
+  // Loop through data
+  for (var i = 0; i < data.length; i++) {
 
-    var location = response1[i].geometry;
-    console.log(location);
-    
+    // Set the data location property to a variable
+    var location = data[i].location;
+
+    // Check for location property
     if (location) {
-     
-      markers.addLayer(L.marker([location.coordinates[1], location.coordinates[0]]) // long, lat
-      .bindPopup(response1[i].descriptor));
-    }
 
+      // Add a new marker to the cluster group and bind a pop-up
+      markers.addLayer(L.marker([location.coords[1], location.coords[0]])
+        .bindPopup(data[i].description));
+    }
   }
 
-// Add our marker cluster layer to the map
-myMap.addLayer(markers);
+  // Add our marker cluster layer to the map
+  myMap.addLayer(markers);
 
 });
+
+
+// // Loop through the cities array and create one marker for each city object
+// for (var i = 0; i < cities.length; i++) {
+//   L.circle(cities[i].location, {
+//     fillOpacity: 0.75,
+//     color: "white",
+//     fillColor: "purple",
+//     // Setting our circle's radius equal to the output of our markerSize function
+//     // This will make our marker's size proportionate to its population
+//     radius: markerSize(cities[i].population)
+//   }).bindPopup("<h1>" + cities[i].name + "</h1> <hr> <h3>Population: " + cities[i].population + "</h3>").addTo(myMap);
+// }
+
+// });

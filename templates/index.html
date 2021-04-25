@@ -138,7 +138,10 @@
                     <div class="col-md-12">
                         <div class="container-fluid" margin-top: 40px style="background-color: rgb(255, 255, 255)">
                             <h4><br>ShowMap</h4><hr>
+                            
+                            <!-- THIS IS WHERE THE MAP WILL GO -->
                             <div id="map"></div>
+
                             <p> <br> This section will contain a full map of Australia with leaflet js marker clusters. When users filter a location by state, the map will zoom in to that area. Users can also zoom in on the map which will scatter the markers based on the events lats and longs. </p>
                             <p> Event markers will have different colours according to event category. Each event will also have a popup containing event name and venue name. </p><br>
                             <br>        
@@ -195,17 +198,20 @@
         <!-- Marker plugin -->
         <script type="text/javascript" src="https://unpkg.com/leaflet.markercluster@1.0.3/dist/leaflet.markercluster.js"></script>
 
-        <!-- Our JS -->
+        <!-- Our API Key -->
+        <script type="text/javascript" src="static/js/config.js"></script>
         
+        <!-- Our JS -->
         <script type="text/javascript" src="static/js/1_ausMap.js"></script>
-        <script type="text/javascript" src="static/js/2_chart.js"></script>
-        <script type="text/javascript" src="static/js/3_table.js"></script>
+        <!-- <script type="text/javascript" src="static/js/2_chart.js"></script> -->
+        <!-- <script type="text/javascript" src="static/js/3_table.js"></script> -->
+        
 
         <!-- Calendar js -->
         <link rel="stylesheet" type="text/css" href="css/lightpick.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
         <script src="lightpick.js"></script>
-        <script> var picker = new Lightpick({ field: document.getElementById('datepicker') });</script>
+        <!-- <script> var picker = new Lightpick({ field: document.getElementById('datepicker') });</script> -->
 
  <!-- end of page content -->                  
     </body>
