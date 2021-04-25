@@ -12,34 +12,33 @@ function BuildBubbleChart() {
         // id = data.map(elem => elem.id);
 
         // console.log(data.map(elem => elem.title));
-        title_name = data.map(elem => elem.title);
+        var title_name = data.map(elem => elem.title);
 
         // coords = data.map(elem => elem.coords);
 
-        category = data.map(elem => elem.category);
+        var category = data.map(elem => elem.category);
         console.log(category);
 
-        venue_name = data.map(elem => elem.venue_name);
+        var venue_name = data.map(elem => elem.venue_name);
 
         // Parse to numeric value
-        rank = data.map((elem) => elem.rank = +elem.rank);
+        var rank = data.map((elem) => elem.rank = +elem.rank);
         console.log(rank);
 
         var inverse_rank = 100 - rank;
         console.log(inverse_rank);
 
-        start_date = data.map((elem) => elem.start_date = new Date(elem.start_date));
+        var start_date = data.map((elem) => elem.start_date = new Date(elem.start_date));
             console.log(start_date);
 
 
         var inverse_size = 100-rank;
         // inverse_size = +inverse_size;
         console.log(inverse_size);
-        console.log(rank+100);
 
         var trace = {
             x: start_date,
-            y: rank,
+            y: venue_name,
             text: title_name,  
             mode: 'markers',
             marker: {
@@ -53,9 +52,9 @@ function BuildBubbleChart() {
         var data = [trace];
 
         var layout = {
-            xaxis:{title:"Date"},
-            yaxis:{title:"Ranking"},
-            showlegend: false,
+            xaxis:{title:"Date", automargin: true},
+            yaxis:{title:"", automargin: true},
+            showlegend: true,
             height: 600,
             width: 1200
         };
