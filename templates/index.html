@@ -25,7 +25,7 @@
 <!-- navbar -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid" >
-                <a class="navbar-brand" color: rgb(20, 20, 20) href="../templates/index.html"><strong>ShowUp</strong></a>
+                <a class="navbar-brand" color: rgb(20, 20, 20) href="../templates/index.html">ShowUp</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon" ></span>
                 </button>
@@ -36,7 +36,7 @@
                         <a class="nav-link" href="">ShowMap</a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link" href="">ShowData</a>
+                        <a class="nav-link" href="">ShowChart</a>
                         </li>
                         <a class="nav-link" href="">ShowTable</a>
                         </li>
@@ -59,7 +59,7 @@
                       <div class="carousel-item active">
                         <img class="d-block w-100" src="https://www.cirquedusoleil.com/-/media/cds/images/shows/axel/hero/axel_hero_test_a_desktop_1920x710.jpg?db=web&la=en&vs=1&hash=55AB2E070A3C3EBAB5147086201564DF86833825" alt="First slide">
                       </div>
-                      <img class="logo" src="logo.png">
+                      <img class="logo" src="/Project/Data-Project2/project2/logo/Showup Logo-02.png">
                     </div>
                   </div>
                   <!-- End Header Section -->
@@ -68,41 +68,12 @@
                   <div class="container-fluid">
                     <div class="container">
                       <div class="row">
-                        <div class="col order-last">
+
+                        <!-- Location filter -->
+                        <div class="col-md order-first">
                           <br>
-                          <div class="dropdown-calendar">
-                          </div>
-                        </div>
-                        <div class="col">
-                          <br>
-                          <select class="form-select" aria-label="Default select example">
-                            <option selected>ShowType (select category)</option>
-                            <option value="1">community</option>
-                            <option value="2">performing-arts</option>
-                            <option value="3">sports</option>
-                            <option value="4">concerts</option>
-                            <option value="5">festivals</option>
-                            <option value="6">expos</option>
-                            <option value="7">conferences</option>
-                          </select>
-                          <!-- <div class="dropdown type"> -->
-                            <!-- <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              ShowType (select category)
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                              <a class="dropdown-item" href="#">community</a>
-                              <a class="dropdown-item" href="#">performing-arts</a>
-                              <a class="dropdown-item" href="#">sports</a>
-                              <a class="dropdown-item" href="#">concerts</a>
-                              <a class="dropdown-item" href="#">festivals</a>
-                              <a class="dropdown-item" href="#">conferences</a>
-                              <a class="dropdown-item" href="#">expos</a>
-                            </div>
-                          </div> -->
-                        </div>
-                        <div class="col order-first">
-                          <br>
-                          <select class="form-select" aria-label="Default select example">
+                          <div class="dropdown state">
+                          <!-- <select class="form-select form-select-lg mb-4" aria-label=".form-select-lg example">
                             <option selected>ShowState (select location)</option>
                             <option value="1">WA</option>
                             <option value="2">SA</option>
@@ -112,10 +83,9 @@
                             <option value="5">VIC</option>
                             <option value="6">TAS</option>
                             <option value="7">NT</option>
-                          </select>
-                          <!-- <div class="dropdown state">
+                          </select> -->
                             <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              ShowState (select location)
+                              ShowState (select show location)
                             </a>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                               <a class="dropdown-item" href="#">WA</a>
@@ -126,7 +96,56 @@
                               <a class="dropdown-item" href="#">TAS</a>
                               <a class="dropdown-item" href="#">NT</a>
                             </div>
-                          </div> -->
+                          </div>
+                        </div>
+                        <!-- End location filter -->
+
+                        <!-- Category filter -->
+                        <div class="col-md">
+                          <br>
+                          <div class="dropdown category">
+                            <!-- <select class="form-select form-select-lg mb-4" aria-label=".form-select-lg example">
+                              <option selected>ShowType (select category)</option>
+                              <option value="comm">community</option>
+                              <option value="arts">performing arts</option>
+                              <option value="sports">sports</option>
+                              <option value="fests">festivals</option>
+                              <option value="concerts">concerts</option>
+                              <option value="confs">conferences</option>
+                              <option value="expos">expos</option>
+                            </select> -->
+                              <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                ShowType (select show category)
+                              </a>
+                              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item" href="#">community</a>
+                                <a class="dropdown-item" href="#">performing arts</a>
+                                <a class="dropdown-item" href="#">sports</a>
+                                <a class="dropdown-item" href="#">festivals</a>
+                                <a class="dropdown-item" href="#">concerts</a>
+                                <a class="dropdown-item" href="#">conferences</a>
+                                <a class="dropdown-item" href="#">expos</a>
+                              </div>
+                            </div>
+                          </div>
+                        <!-- End category filter --> 
+
+                        <!-- Calendar Filter -->
+                        <div class="col-md order-last">
+                          <br>
+                          <!-- <select class="form-select form-select-lg mb-4" aria-label=".form-select-lg example">
+                            <option selected>ShowDate (select from calendar)</option>
+                            <option value="comm">This is a placeholder</option>
+                          </select> -->
+                          <div class="dropdown calendar">
+                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              ShowDate (select from calendar)
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                              <a class="dropdown-item" href="#">This is a placeholder</a>
+                            </div>
+                          </div>
+                        <!-- End calendar filter -->
                         </div>
                       </div>
                     </div>
@@ -147,14 +166,9 @@
                     <div class="col-md-12">
                         <div class="container-fluid" margin-top: 40px style="background-color: rgb(255, 255, 255)">
                             <h4><br>ShowChart</h4><hr>
-                            <div id="chart"></div>
+                            <div id="bubble"></div>
                             <p> <br> This section will contain a bubble chart that shows the filtered events. Each event bubble is represented by that particular event's rank. </p><br>
                             <br>
-                            
-                            <div id="bubble"></div>
-
-
-
                         </div>
                     </div>
                     <div class="col-md-12">
@@ -162,7 +176,21 @@
                             <h4><br>ShowTable</h4><hr>
                             <div id="table"></div>
                             <p> <br> This section will contain a table of the filtered data. The columns will be Event Name, Event Description, Event Address. </p><br>
-                            <br>        
+                            <br>
+                            <div class="col-md-10">
+                              <div id="table-area" class="">
+                                <table id="ufo-table" class="table table-striped">
+                                <table id="events-table" class="table table-striped">
+                                  <thead>
+                                    <tr>
+                                      <th class="table-head">ShowName</th>
+                                      <th class="table-head">ShowDescription</th>
+                                      <th class="table-head">ShowAddress</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody></tbody>
+                                </table>
+                              </div>
                         </div>
                     </div>   
                 </div>
