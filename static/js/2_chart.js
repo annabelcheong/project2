@@ -54,8 +54,57 @@ function BuildBubbleChart() {
         // y-axis variable for category
         comm_venue_name = comm_data.map(elem => elem.venue_name);
 
+        //////////////////////////////////
+        //// Filtered array for category 'sports'
+        sports_data = data.filter(data => data.category == "sports");
 
+        // x-axis variable for category
+        sports_date = sports_data.map(elem => elem.start_date = new Date(elem.start_date))
         
+        // y-axis variable for category
+        sports_venue_name = sports_data.map(elem => elem.venue_name);
+
+        //////////////////////////////////
+        //// Filtered array for category 'performing-arts'
+        perf_data = data.filter(data => data.category == "sports");
+
+        // x-axis variable for category
+        perf_date = perf_data.map(elem => elem.start_date = new Date(elem.start_date))
+        
+        // y-axis variable for category
+        perf_venue_name = perf_data.map(elem => elem.venue_name);
+        
+        //////////////////////////////////
+        //// Filtered array for category 'festivals'
+        fest_data = data.filter(data => data.category == "festivals");
+
+        // x-axis variable for category
+        fest_date = fest_data.map(elem => elem.start_date = new Date(elem.start_date))
+        
+        // y-axis variable for category
+        fest_venue_name = fest_data.map(elem => elem.venue_name);
+
+        //////////////////////////////////
+        //// Filtered array for category 'concerts'
+        conc_data = data.filter(data => data.category == "concerts");
+
+        // x-axis variable for category
+        conc_date = conc_data.map(elem => elem.start_date = new Date(elem.start_date))
+        
+        // y-axis variable for category
+        conc_venue_name = conc_data.map(elem => elem.venue_name);
+
+
+
+
+
+
+
+
+
+
+
+
         
         var venue_name = data.map(elem => elem.venue_name);
 
@@ -90,7 +139,7 @@ function BuildBubbleChart() {
 
         var trace2 = {
             x: conf_date,
-            y: conf_venue_name,
+            y: title_name,            
             text: title_name,  
             mode: 'markers',
             marker: {
