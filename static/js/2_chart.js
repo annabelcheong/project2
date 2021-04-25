@@ -11,7 +11,6 @@ function BuildBubbleChart() {
     d3.json('api_events').then((data) => {
         console.log(data);
         
-
         // console.log(data.map(elem => elem.id));
         id = data.map(elem => elem.id);
 
@@ -22,7 +21,9 @@ function BuildBubbleChart() {
 
         venue_name = data.map(elem => elem.venue_name);
 
-        rank = data.map(elem => elem.rank);
+        // Parse to numeric value
+        rank = data.map((elem) => elem.rank = +elem.rank);
+        
 
         
         // Filter data by
