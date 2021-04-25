@@ -33,6 +33,28 @@ function BuildBubbleChart() {
 
 
         ///////////////////////////////////
+
+        //////////////////////////////////
+        //// Filtered array for category 'conferences'
+        conf_data = data.filter(data => data.category == "conferences");
+    
+        // x-axis variable for category
+        conf_date = conf_data.map(elem => elem.start_date = new Date(elem.start_date))
+        
+        // y-axis variable for category
+        conf_venue_name = conf_data.map(elem => elem.venue_name);
+
+        //////////////////////////////////
+        //// Filtered array for category 'community'
+        comm_data = data.filter(data => data.category == "community");
+
+        // x-axis variable for category
+        comm_date = comm_data.map(elem => elem.start_date = new Date(elem.start_date))
+        
+        // y-axis variable for category
+        comm_venue_name = comm_data.map(elem => elem.venue_name);
+
+
         
         
         var venue_name = data.map(elem => elem.venue_name);
@@ -52,21 +74,52 @@ function BuildBubbleChart() {
         // inverse_size = +inverse_size;
         console.log(inverse_size);
 
-        var trace = {
+        var trace1 = {
             x: expo_date,
             y: expo_venue_name,
             text: title_name,  
             mode: 'markers',
             marker: {
                 size: rank, 
-                color: rank, // Colours grouped by rank i.e. In this instance, grouped by size
-                colorscale: 'Portland'
+                color: "#119dff" // blue
+                //rank, // Colours grouped by rank i.e. In this instance, grouped by size
+                // colorscale: 'Portland'
             },
             name: 'expos'
         };
-    
-        var data = [trace];
 
+        var trace2 = {
+            x: conf_date,
+            y: conf_venue_name,
+            text: title_name,  
+            mode: 'markers',
+            marker: {
+                size: rank, 
+                color: "#ff870f" // orange
+                //'rgb(17, 157, 255)'//,rank, // Colours grouped by rank i.e. In this instance, grouped by size
+                // colorscale: 'Portland'
+            },
+            name: 'conferences'
+        };
+    
+        var trace3 = {
+            x: comm_date,
+            y: comm_venue_name,
+            text: title_name,  
+            mode: 'markers',
+            marker: {
+                size: rank, 
+                color: "#33cc33" // green
+                //rank, // Colours grouped by rank i.e. In this instance, grouped by size
+                // colorscale: 'Portland'
+            },
+            name: 'community'
+        };
+
+        var data = [trace1, trace2, trace3];
+
+
+        // LAYOUT //
         var layout = {
             xaxis:{title:"Date", automargin: true},
             yaxis:{title:"", automargin: true},
