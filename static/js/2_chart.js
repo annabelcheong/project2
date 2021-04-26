@@ -3,6 +3,7 @@ function BuildBubbleChart() {
     
     d3.json('/api_events').then((data) => {
         // console.log(data);
+        var allData = data;
         
         // id = data.map(elem => elem.id);
         // coords = data.map(elem => elem.coords);
@@ -31,12 +32,19 @@ function BuildBubbleChart() {
         // EVENT LISTENER FOR CATEGORY DROPDOWN
         ///////////////////////////
 
-        d3.select("#selCategory").on("change", function(d) {
+        d3.select("#selCategory").on("change", function(selectedOption) {
             
             var selectedOption = d3.select(this).property("value")
+            console.log(selectedOption); //This works
+            //console.log(data); // This works but unexpected data returned
+    
+            //console.log(title_name); // it reads
+            filtData = allData.filter(allData => allData.category == selectedOption);
+            //console.log(filtData);
 
             // Run function updateBubbleChart with selectedOption
-            updateBubbleChart(selectedOption)
+            updateBubbleChart(selectedOption);
+
 
         });
         
@@ -46,44 +54,60 @@ function BuildBubbleChart() {
         ///////////////////////////
 
         function updateBubbleChart(selectedGroup){
-                // Add in bubble chart code
+            // console.log(selectedGroup); // This works. Prints out the selectedGroup, which is selectedOption
+            
+            //// Filtered array for category 'selectedGroup' (expos, community, performing-arts, sports etc)
+            //console.log(filtData); // This works. Prints array of info with categories filtered by selectedGroup
+            
+            // Add in bubble chart code
+            
+            // x-axis variable for category
+            cat_date = filtData.map(elem => elem.start_date = new Date(elem.start_date));
+            // console.log(cat_date); //Print array of dates based on filtered selectedGroup array
 
-                //// Filtered array for category 'conferences'
-                filtCatData = data.filter(data => data.category == selectedGroup);
+            // y-axis variable for category
+            cat_venue_name = filtData.map(elem => elem.venue_name);
+            console.log(cat_venue_name); //Print array of venue names  based on filtered selectedGroup array
 
-                // x-axis variable for category
-                cat_date = filtCatData.map(elem => elem.start_date = new Date(elem.start_date));
+            // pop-up text (title_name required)
+            cat_title_name = filtData.map(elem => elem.title);
+            
+            ///////////
+            // DATA
+            ///////////
 
-                // y-axis variable for category
-                cat_venue_name = filtCatData.map(elem => elem.venue_name);
+            // TRACE (details of bubblechart)
+            var trace_cat = {
+                x: cat_date,
+                y: cat_venue_name,
+                text: cat_title_name,
+                mode: 'markers',
+                marker: {
+                    size: rank,
+                    color: "#119dff" // blue
+                    //rank, // Colours grouped by rank i.e. In this instance, grouped by size
+                    // colorscale: 'Portland'
+                },
+                name: selectedGroup // Legend
+            };
 
-                var trace_cat = {
-                    x: cat_date,
-                    y: cat_venue_name,
-                    text: title_name,
-                    mode: 'markers',
-                    marker: {
-                        size: rank,
-                        color: "#119dff" // blue
-                        //rank, // Colours grouped by rank i.e. In this instance, grouped by size
-                        // colorscale: 'Portland'
-                    },
-                    name: selectedGroup
-                };
+            // DATA (data variable holding the trace)
+            var data = [trace_cat];
 
-                var data = [trace_cat];
+            ///////////
+            // LAYOUT //
+            ///////////
 
+            var layout = {
+                xaxis: { title: "Date", automargin: true },
+                yaxis: { title: "", automargin: true },
+                showlegend: true,
+                height: 600,
+                width: 1200
+            };
 
-                // LAYOUT //
-                var layout = {
-                    xaxis: { title: "Date", automargin: true },
-                    yaxis: { title: "", automargin: true },
-                    showlegend: true,
-                    height: 600,
-                    width: 1200
-                };
-
-                Plotly.newPlot("bubble", data, layout);
+            // Plot graph with plotly 
+            Plotly.newPlot("bubble", data, layout); //'bubble' is the id reference in the html
 
         };
 
