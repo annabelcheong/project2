@@ -9,15 +9,19 @@ html {
 height: 100%;
 } */
   
-body { 
+/* body { 
     margin: 0; 
     padding: 0; 
-}
+} */
+
 #map { 
-    position: absolute; 
-    top: 0; 
+    position: absolute;
+    top: 30%; 
     bottom: 0; 
-    width: 100%; 
+    width: 90%;
+    height: 120%;
+    float: inline-end;
+    display: flex;
 }
 
 h2 {
