@@ -21,48 +21,25 @@ function BuildTable() {
         
         var columns = [event_name, event_desc, event_venue, event_addy];
         console.log(columns);
-        
+
         data.forEach((dataRow) => {
             // Append a row to the table body
             const row = tbody.append("tr");
         
             // Loop through each field in the dataRow and add
             // each value as a table cell (td)
-            Object.values(dataRow).forEach((val) => {
-              let cell = row.append("td")
-              cell.text(val);
-              }
-            );
-          });
+            Object.values(dataRow)
+            for (var i = 0; i < 12; i++) {
+                trow = tbody.append("tr");
+                trow.append("td").text(event_name[i]);
+                trow.append("td").text(event_desc[i]);
+                trow.append("td").text(event_venue[i]);
+                trow.append("td").text(event_addy[i]);
         }
-        
-        
-        // data.forEach((data) => {
+            
+          });
 
-        //     tr.append('td')
-        //         .attr('class', 'title')
-        //         .html(function() { return event_name; });
-
-        //     tr.append('td')
-        //         .attr('class', 'center')
-        //         .html(function() { return event_desc; });
-
-        //     tr.append('td')
-        //         .attr('class', 'num')
-        //         .html(function() { return event_venue; });
-
-        //     tr.append('td')
-        //         .attr('class', 'num')
-        //         .html(function() { return event_addy; })
-
-        // });
-
-    );
-
+        });
 }
-
-
-
-    
 
 BuildTable();
