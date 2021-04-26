@@ -38,14 +38,9 @@ function BuildTable() {
                 trow.append("td").text(event_desc[i]);
                 trow.append("td").text(event_venue[i]);
                 trow.append("td").text(event_addy[i]);
-<<<<<<< HEAD
-            }
-        });
-=======
-        }
+            };
             
-            });
->>>>>>> 41630abea97c936bd60952b6cd69174bc0b2d35b
+        });
 
         // category dropdown event listener
         d3.select("#selCategory").on("change", function(selectedOption) {
@@ -56,12 +51,10 @@ function BuildTable() {
             console.log(filtData)
             updateTable(selectedOption);
         });
-<<<<<<< HEAD
+
     });
-}
-=======
-    }
->>>>>>> 41630abea97c936bd60952b6cd69174bc0b2d35b
+
+};
 
 function updateTable(){
     console.log(filtData);
@@ -95,7 +88,7 @@ function updateTable(){
             Object.values(dataRow)
             for (var i = 0; i < 12; i++) {
                 trow = tbody.append("tr");
-                trow.append("td").text(event_cat[i]);
+                // trow.append("td").text(event_cat[i]);
                 trow.append("td").text(event_name[i]);
                 trow.append("td").text(event_desc[i]);
                 trow.append("td").text(event_venue[i]);
