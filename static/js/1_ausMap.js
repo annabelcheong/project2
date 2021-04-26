@@ -18,7 +18,7 @@
 // Creating map object
 // * Co-ordinates and zoom show Australia
 var myMap = L.map("map", {
-  center: [-25.58, 134.50],
+  center: [-25.58, 134.50], // Array[1], Array[0] //
   zoom: 4
   });
 
@@ -29,7 +29,8 @@ L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
   maxZoom: 18,
   zoomOffset: -1,
   id: "mapbox/streets-v11",
-  accessToken: API_KEY
+  // accessToken: API_KEY
+  accessToken: "pk.eyJ1Ijoidmp1bGlhbmEiLCJhIjoiY2tuZnZ6eXFtMDY2dTJ2czNueGtnZjRqYyJ9.hrTcUSyz6g7XrmGlra6CCQ"
 }).addTo(myMap);
 
 
@@ -52,40 +53,34 @@ d3.json(appRoute).then((data) => {
   // The map will show the location of the event and title
   var title = data.map(t => t.title);
   var coords = data.map(d => d.coords);
-<<<<<<< Updated upstream
   console.log(coords);
-
-=======
-  // console.log(coords);
   
->>>>>>> Stashed changes
   // Pull data for locations
   // Coordinates are in one string, requiring to be split
-   var splitCoords = coords.map(coordinates =>  coordinates.split(","));
-   console.log(splitCoords);
-   
-  // // Create markers for cluster group
-  // var markers = L.markerClusterGroup();
+  var splitCoords = coords.map(coordinates =>  coordinates.split(","));
+  console.log(splitCoords);
 
-  // // Loop through data
-  // for (var i = 0; i < splitCoords.length; i++) { 
+  // Create markers for cluster group
+  var markers = L.markerClusterGroup();
 
-  // };
+  // Loop through data
+  for (var i = 0; i < splitCoords.length; i++) {
 
     // Set the data location property to a variable
-    // var location = splitCoords[i].location;
+    var location = splitCoords[i];
+    // console.log(location[1])
 
   //   // Check for location property
-  //   if (location) {
+    if (location) {
 
-  //     // Add a new marker to the cluster group and bind a pop-up
-  //     markers.addLayer(L.marker([location.coords[1], location.coords[0]])
-  //       .bindPopup(data[i].description));
-  //   }
-  // }
+      // Add a new marker to the cluster group and bind a pop-up
+      markers.addLayer(L.marker([location[1], location[0]])
+        .bindPopup(title[i]));
+    }
+  };
 
-  // // Add our marker cluster layer to the map
-  // myMap.addLayer(markers);
+  // Add our marker cluster layer to the map
+  myMap.addLayer(markers);
 
 });
 

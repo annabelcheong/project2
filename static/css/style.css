@@ -10,16 +10,18 @@ height: 100%;
 } */
   
 #map { 
-    position: absolute;
+    position: relative;
     /* top: 30%;
-    bottom: 0;
-    width: 90%;
-    height: 120%; */
+    bottom: 30%;
+    width: 90%; */
+    height: 120%;
     width: 500px;
     height: 250px;
-    float: inline-end;
+    align-content: center;
+    float: inline-start;
     display: flex;
     text-align: center;
+    margin-left: 25%;
 }
 
 h2 {
