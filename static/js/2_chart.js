@@ -40,7 +40,7 @@ function BuildBubbleChart() {
     
             //console.log(title_name); // it reads
             filtData = allData.filter(allData => allData.category == selectedOption);
-            //console.log(filtData);
+            console.log(filtData);
 
             // Run function updateBubbleChart with selectedOption
             updateBubbleChart(selectedOption);
