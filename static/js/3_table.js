@@ -1,4 +1,11 @@
-var data = JSON.parse("/events.json")
-// 'api_events'
 
-console.log(data)
+function BuildTable() {
+    
+    d3.json('/api_events').then((data) => {
+        console.log(data);
+    });
+
+};
+
+BuildTable();
+

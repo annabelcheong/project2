@@ -1,7 +1,7 @@
 
 function BuildBubbleChart() {
     
-    d3.json('api_events').then((data) => {
+    d3.json('/api_events').then((data) => {
         // console.log(data);
         
         // id = data.map(elem => elem.id);
