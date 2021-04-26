@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // var data = JSON.parse("/events.json")
 // // 'api_events'
 
@@ -25,3 +26,16 @@ function BuildTable() {
 };
 
 BuildTable();
+=======
+
+function BuildTable() {
+    
+    d3.json('/api_events').then((data) => {
+        //console.log(data);
+    });
+
+};
+
+BuildTable();
+
+>>>>>>> 51887ebee7f43e68f92c14d44555691d2f8cc4a7
