@@ -80,10 +80,10 @@ function BuildBubbleChart() {
             var trace_cat = {
                 x: cat_date,
                 y: cat_venue_name,
-                text: cat_title_name,
+                text: rank,
                 mode: 'markers',
                 marker: {
-                    size: rank,
+                    size: rank_size,
                     color: "#119dff" // blue
                     //rank, // Colours grouped by rank i.e. In this instance, grouped by size
                     // colorscale: 'Portland'
@@ -99,11 +99,13 @@ function BuildBubbleChart() {
             ///////////
 
             var layout = {
+                // hovermode: "closest",
                 xaxis: { title: "Date", automargin: true },
                 yaxis: { title: "", automargin: true },
                 showlegend: true,
                 height: 600,
-                width: 1200
+                width: 1200,
+                
             };
 
             // Plot graph with plotly 
@@ -218,7 +220,8 @@ function BuildBubbleChart() {
         var trace1 = {
             x: expo_date,
             y: expo_venue_name,
-            text: rank,//title_name,  
+            text: rank,  
+            // hover_info: rank,
             mode: 'markers',
             marker: {
                 size: rank_size, 
@@ -235,7 +238,7 @@ function BuildBubbleChart() {
             text: title_name,  
             mode: 'markers',
             marker: {
-                size: rank, 
+                size: rank_size, 
                 color: "#ff870f" // orange
                 //'rgb(17, 157, 255)'//,rank, // Colours grouped by rank i.e. In this instance, grouped by size
                 // colorscale: 'Portland'
@@ -249,7 +252,7 @@ function BuildBubbleChart() {
             text: title_name,  
             mode: 'markers',
             marker: {
-                size: rank, 
+                size: rank_size, 
                 color: "#33cc33" // green
                 //rank, // Colours grouped by rank i.e. In this instance, grouped by size
                 // colorscale: 'Portland'
