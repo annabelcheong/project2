@@ -63,11 +63,11 @@ function BuildBubbleChart() {
             
             // x-axis variable for category
             cat_date = filtData.map(elem => elem.start_date = new Date(elem.start_date));
-            // console.log(cat_date); //Print array of dates based on filtered selectedGroup array
+            //console.log(cat_date); //Print array of dates based on filtered selectedGroup array
 
             // y-axis variable for category
             cat_venue_name = filtData.map(elem => elem.venue_name);
-            console.log(cat_venue_name); //Print array of venue names  based on filtered selectedGroup array
+            //console.log(cat_venue_name); //Print array of venue names  based on filtered selectedGroup array
 
             // pop-up text (title_name required)
             cat_title_name = filtData.map(elem => elem.title);
@@ -189,30 +189,26 @@ function BuildBubbleChart() {
 
 
 
-
-
-
-
-
-
-
-
         
         var venue_name = data.map(elem => elem.venue_name);
 
         // Parse to numeric value
         var rank = data.map((elem) => elem.rank = +elem.rank);
-        // console.log(rank);
+        console.log(rank); //This works and gives back an array of numerical values
 
-        var inverse_rank = 100 - rank;
-        // console.log(inverse_rank);
+        // Inversed the values to allow rank of 1 to be biggest in marker size, 100 to be smallest. 
+        // Multiplied values by 1000 to get it to a reasonable size on chart.
+        var rank_size = data.map((elem) => elem.rank = 1/(+elem.rank)*1000);
+        console.log(rank_size);
+        
+
 
         var start_date = data.map((elem) => elem.start_date = new Date(elem.start_date));
         //    console.log(start_date);
 
 
-        var inverse_size = 100-rank;
-        // inverse_size = +inverse_size;
+        // var inverse_size = 100-rank;
+        // // inverse_size = +inverse_size;
         // console.log(inverse_size);
 
         //////////////
@@ -222,10 +218,10 @@ function BuildBubbleChart() {
         var trace1 = {
             x: expo_date,
             y: expo_venue_name,
-            text: title_name,  
+            text: rank,//title_name,  
             mode: 'markers',
             marker: {
-                size: rank, 
+                size: rank_size, 
                 color: "#119dff" // blue
                 //rank, // Colours grouped by rank i.e. In this instance, grouped by size
                 // colorscale: 'Portland'
