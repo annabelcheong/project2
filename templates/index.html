@@ -67,7 +67,7 @@
                   <div class="container">
                     <div class="container">
                       <div class="row">
-
+                        
                         <!-- Location filter -->
                         <div class="col-md order-first">
                           <br>
@@ -83,10 +83,14 @@
                             <option value="VIC">VIC</option>
                             <option value="WA">WA</option>
                           </select> -->
-                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <label for="selState"><strong>ShowState (select show location)</strong></label>
+                            <!-- <select id="selState" onchange="updateBubbleChart(this.value)" class="btn btn-secondary dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              <a>ShowType (select show category</a>
+                            </select> -->
+                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="selState" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                               ShowState (select show location)
                             </a>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <div class="dropdown-menu" aria-labelledby="selState">
                               <a class="dropdown-item" href="#">ACT</a>
                               <a class="dropdown-item" href="#">NSW</a>
                               <a class="dropdown-item" href="#">NT</a>
@@ -117,14 +121,10 @@
                               <!-- <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 ShowType (select show category)
                               </a> -->
-
-
-                              <a><select class="btn btn-secondary dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="selCategory" onchange="updateBubbleChart(this.value)">ShowType (select show category)</select></a>
-
-
-
-
-
+                              <label for="selCategory"><strong>ShowType (select show category)</strong></label>
+                              <select id="selCategory" onchange="updateBubbleChart(this.value)" class="btn btn-secondary dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a>ShowType (select show category</a>
+                              </select>
                               <!-- <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                 <a class="dropdown-item" href="#">community</a>
                                 <a class="dropdown-item" href="#">concerts</a>
@@ -146,14 +146,19 @@
                             <option value="comm">This is a placeholder</option>
                           </select> -->
                           <div class="dropdown calendar">
-                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <label for="selDate"><strong>ShowDate (select from calendar)</strong></label>
+                            <!-- <select id="selDate" onchange="updateBubbleChart(this.value)" class="btn btn-secondary dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              <a>ShowType (select show category</a>
+                            </select> -->
+                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="selDate" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                               ShowDate (select from calendar)
                             </a>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <div class="dropdown-menu" aria-labelledby="selDate">
                               <a class="dropdown-item" href="#">This is a placeholder</a>
                             </div>
                           </div>
                         <!-- End calendar filter -->
+
                         </div>
                       </div>
                     </div>
@@ -167,7 +172,7 @@
                             <p> <br> This section will contain a full map of Australia with leaflet js marker clusters. When users filter a location by state, the map will zoom in to that area. Users can also zoom in on the map which will scatter the markers based on the events lats and longs. </p>
                             <p> Event markers will have different colours according to event category. Each event will also have a popup containing event name and venue name. </p><br>
                               <!-- Map container -->
-                              <div class="container-fluid" margin-top: 20px style="background-color: rgb(255, 255, 255)">
+                              <div class="container-fluid" margin-top=20px margin-bottom=20px style="background-color: rgb(255, 255, 255)">
                                 <div id="map"></div>
                               </div>
                             <br>        
