@@ -44,7 +44,7 @@ function BuildBubbleChart() {
 
             // Run function updateBubbleChart with selectedOption
             updateBubbleChart(selectedOption);
-
+            updateTable();
 
         });
         
@@ -59,6 +59,8 @@ function BuildBubbleChart() {
             //// Filtered array for category 'selectedGroup' (expos, community, performing-arts, sports etc)
             //console.log(filtData); // This works. Prints array of info with categories filtered by selectedGroup
             
+
+
             // Add in bubble chart code
             
             // x-axis variable for category
@@ -196,12 +198,12 @@ function BuildBubbleChart() {
 
         // Parse to numeric value
         var rank = data.map((elem) => elem.rank = +elem.rank);
-        console.log(rank); //This works and gives back an array of numerical values
+        //console.log(rank); //This works and gives back an array of numerical values
 
         // Inversed the values to allow rank of 1 to be biggest in marker size, 100 to be smallest. 
         // Multiplied values by 1000 to get it to a reasonable size on chart.
         var rank_size = data.map((elem) => elem.rank = 1/(+elem.rank)*1000);
-        console.log(rank_size);
+        //console.log(rank_size);
         
 
 
