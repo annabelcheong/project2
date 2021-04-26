@@ -1,8 +1,4 @@
 
-// var obj = JSON.parse("/api_events")
-// 'api_events'
-
-// event_data = "events.json"
 function BuildBubbleChart() {
     
     d3.json('api_events').then((data) => {
@@ -13,9 +9,8 @@ function BuildBubbleChart() {
 
         var title_name = data.map(elem => elem.title);
 
-        
         var category = data.map(elem => elem.category);
-        console.log(category);
+        // console.log(category);
 
         ///////////////////////////
         // DROP DOWN FOR CATEGORY
@@ -32,7 +27,10 @@ function BuildBubbleChart() {
         .attr("value", function (d) {return d;})
 
 
-        // Event listener for category dropdown
+        ///////////////////////////
+        // EVENT LISTENER FOR CATEGORY DROPDOWN
+        ///////////////////////////
+
         d3.select("#selCategory").on("change", function(d) {
             
             var selectedOption = d3.select(this).property("value")
@@ -43,6 +41,9 @@ function BuildBubbleChart() {
         });
         
 
+        ///////////////////////////
+        // function UPDATEBUBBLECHART
+        ///////////////////////////
 
         function updateBubbleChart(selectedGroup){
                 // Add in bubble chart code
