@@ -17,8 +17,10 @@
 
 // Creating map object
 // * Co-ordinates and zoom show Australia
+// Australia LatLong: [-26.853387500000004, 133.27515449999999]
+
 var myMap = L.map("map", {
-  center: [-25.58, 134.50], // Array[1], Array[0] //
+  center: [-28, 135], // Array[1], Array[0]
   zoom: 4
   });
 
@@ -50,10 +52,13 @@ d3.json(appRoute).then((data) => {
   // CHECK data is loaded
   console.log(data);
 
-  // The map will show the location of the event and title
-  var title = data.map(t => t.title);
+  // The map will show coordinates and pop up showing: (1) title; (2) start date; (3) category type
   var coords = data.map(d => d.coords);
   console.log(coords);
+
+  var title = data.map(t => t.title);
+  var startdate = data.map(sd => sd.start_date = new Date(sd.start_date));
+  var category = data.map(cat => cat.category);
   
   // Pull data for locations
   // Coordinates are in one string, requiring to be split
@@ -75,7 +80,7 @@ d3.json(appRoute).then((data) => {
 
       // Add a new marker to the cluster group and bind a pop-up
       markers.addLayer(L.marker([location[1], location[0]])
-        .bindPopup(title[i]));
+        .bindPopup(title[i] + "<hr> Start Date: " + startdate[i] + "<hr> Event Type: " + category[i]));
     }
   };
 
