@@ -31,6 +31,10 @@ def events():
 
     # event_result = events_info.to_json(orient="records")
 
+    # Remove unwanted characters from 'coords' column
+    events_info['coords'] = events_info.coords.str.lstrip('{')
+    events_info['coords'] = events_info.coords.str.rstrip('}')
+
     # Copied script from 'events_flask.ipynb'
     event_result = json.dumps(json.loads(events_info.to_json(orient = "records")), indent=4)
     event_result = json.loads(event_result)
