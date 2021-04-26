@@ -49,28 +49,38 @@ d3.json(appRoute).then((data) => {
   // CHECK data is loaded
   console.log(data);
 
+  // The map will show the location of the event and title
+  var title = data.map(t => t.title);
+  var coords = data.map(d => d.coords);
+  console.log(coords);
+
   // Pull data for locations
+  // Coordinates are in one string, requiring to be split
+   var splitCoords = coords.map(coordinates =>  coordinates.split(","));
+   console.log(splitCoords);
+   
+  // // Create markers for cluster group
+  // var markers = L.markerClusterGroup();
 
-  // Create markers for cluster group
-  var markers = L.markerClusterGroup();
+  // // Loop through data
+  // for (var i = 0; i < splitCoords.length; i++) { 
 
-  // Loop through data
-  for (var i = 0; i < data.length; i++) {
+  // };
 
     // Set the data location property to a variable
-    var location = data[i].location;
+    // var location = splitCoords[i].location;
 
-    // Check for location property
-    if (location) {
+  //   // Check for location property
+  //   if (location) {
 
-      // Add a new marker to the cluster group and bind a pop-up
-      markers.addLayer(L.marker([location.coords[1], location.coords[0]])
-        .bindPopup(data[i].description));
-    }
-  }
+  //     // Add a new marker to the cluster group and bind a pop-up
+  //     markers.addLayer(L.marker([location.coords[1], location.coords[0]])
+  //       .bindPopup(data[i].description));
+  //   }
+  // }
 
-  // Add our marker cluster layer to the map
-  myMap.addLayer(markers);
+  // // Add our marker cluster layer to the map
+  // myMap.addLayer(markers);
 
 });
 
