@@ -9,6 +9,15 @@ html {
 height: 100%;
 } */
   
+#map { 
+    position: absolute;
+    top: 30%; 
+    bottom: 0; 
+    width: 90%;
+    height: 120%;
+    float: inline-end;
+    display: flex;
+}
 
 h2 {
     color: rgb(35, 35, 35);
