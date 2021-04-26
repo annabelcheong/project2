@@ -1,6 +1,5 @@
-<<<<<<< HEAD
 // var data = JSON.parse("/events.json")
-// // 'api_events'
+// 'api_events'
 
 // console.log(data)
 const tbody = d3.select("tbody");
@@ -15,27 +14,55 @@ function BuildTable() {
         // console.log(event_name);
         var event_desc = data.map(elem => elem.description);
         // console.log(event_desc);
+        var event_venue = data.map(elem => elem.venue_name);
+        // console.log(event_venue);
         var event_addy = data.map(elem => elem.formatted_address);
         // console.log(event_addy);
-        var event_venue = data.map(elem => elem.venue_name);
-        console.log(event_venue);
+        
+        var columns = [event_name, event_desc, event_venue, event_addy];
+        console.log(columns);
+        
+        data.forEach((dataRow) => {
+            // Append a row to the table body
+            const row = tbody.append("tr");
+        
+            // Loop through each field in the dataRow and add
+            // each value as a table cell (td)
+            Object.values(dataRow).forEach((val) => {
+              let cell = row.append("td")
+              cell.text(val);
+              }
+            );
+          });
+        }
         
         
+        // data.forEach((data) => {
 
-    });
-};
+        //     tr.append('td')
+        //         .attr('class', 'title')
+        //         .html(function() { return event_name; });
 
-BuildTable();
-=======
+        //     tr.append('td')
+        //         .attr('class', 'center')
+        //         .html(function() { return event_desc; });
 
-function BuildTable() {
+        //     tr.append('td')
+        //         .attr('class', 'num')
+        //         .html(function() { return event_venue; });
+
+        //     tr.append('td')
+        //         .attr('class', 'num')
+        //         .html(function() { return event_addy; })
+
+        // });
+
+    );
+
+}
+
+
+
     
-    d3.json('/api_events').then((data) => {
-        //console.log(data);
-    });
-
-};
 
 BuildTable();
-
->>>>>>> 51887ebee7f43e68f92c14d44555691d2f8cc4a7
