@@ -52,8 +52,13 @@ d3.json(appRoute).then((data) => {
   // The map will show the location of the event and title
   var title = data.map(t => t.title);
   var coords = data.map(d => d.coords);
+<<<<<<< Updated upstream
   console.log(coords);
 
+=======
+  // console.log(coords);
+  
+>>>>>>> Stashed changes
   // Pull data for locations
   // Coordinates are in one string, requiring to be split
    var splitCoords = coords.map(coordinates =>  coordinates.split(","));
