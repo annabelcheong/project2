@@ -1,7 +1,6 @@
 function updateTable(){
     console.log(filtData);
   
-
     d3.json('/api_events').then((data) => {
 
         var event_cat = filtData.map(elem => elem.category);
@@ -11,9 +10,9 @@ function updateTable(){
         console.log(event_name);
         var event_desc = filtData.map(elem => elem.description);
         // console.log(event_desc);
-        var event_venue = filtData.map(elem => elem.venue_name).slice[0,10];
+        var event_venue = filtData.map(elem => elem.venue_name);
         // console.log(event_venue);
-        var event_addy = filtData.map(elem => elem.formatted_address).slice[0,10];
+        var event_addy = filtData.map(elem => elem.formatted_address);
         // console.log(event_addy);
         
         var columns = [event_name, event_desc, event_venue, event_addy];
@@ -25,7 +24,6 @@ function updateTable(){
 
         data.forEach((dataRow) => {
 
-            
 
             // Append a row to the table body
             const row = tbody.append("tr");
