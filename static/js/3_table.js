@@ -1,51 +1,41 @@
-// from data.js
-const tableData = data;
+<<<<<<< HEAD
+// var data = JSON.parse("/events.json")
+// // 'api_events'
 
-// get table references
+// console.log(data)
 const tbody = d3.select("tbody");
 
-function buildTable(data) {
-  // First, clear out any existing data
-  tbody.html("");
+function BuildTable() {
+    
+    tbody.html("");
 
-  // Next, loop through each object in the data
-  // and append a row and cells for each value in the row
-  data.forEach((dataRow) => {
-    // Append a row to the table body
-    const row = tbody.append("tr");
+    d3.json('/api_events').then((data) => {
+        // console.log(data);
+        var event_name = data.map(elem => elem.title);
+        // console.log(event_name);
+        var event_desc = data.map(elem => elem.description);
+        // console.log(event_desc);
+        var event_addy = data.map(elem => elem.formatted_address);
+        // console.log(event_addy);
+        var event_venue = data.map(elem => elem.venue_name);
+        console.log(event_venue);
+        
+        
 
-    // Loop through each field in the dataRow and add
-    // each value as a table cell (td)
-    Object.values(dataRow).forEach((val) => {
-      let cell = row.append("td");
-        cell.text(val);
-      }
-    );
-  });
-}
+    });
+};
 
-function handleClick() {
+BuildTable();
+=======
 
-    // Grab the datetime value from the filter
-    const date = d3.select("#datetime").property("value");
-    let filteredData = tableData;
-  
-    // Check to see if a date was entered and filter the
-    // data using that date.
-    if (date) {
-      // Apply `filter` to the table data to only keep the
-      // rows where the `datetime` value matches the filter value
-      filteredData = filteredData.filter(row => row.datetime === date);
-    }
-  
-    // Rebuild the table using the filtered data
-    // @NOTE: If no date was entered, then filteredData will
-    // just be the original tableData.
-    buildTable(filteredData);
-  }
-  
-  // Attach an event to listen for the form button
-  d3.selectAll("#filter-btn").on("click", handleClick);
-  
-  // Build the table when the page loads
-  buildTable(tableData);
+function BuildTable() {
+    
+    d3.json('/api_events').then((data) => {
+        //console.log(data);
+    });
+
+};
+
+BuildTable();
+
+>>>>>>> 51887ebee7f43e68f92c14d44555691d2f8cc4a7

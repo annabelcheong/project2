@@ -66,12 +66,16 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light {
 }
 
 .dropdown-toggle {
-    background-color:  rgb(190, 190, 191);
-    border-color: rgb(190, 190, 191);
+    background-color:  rgb(35, 35, 35);
+    border-color: rgb(35, 35, 35);
 }
 
 .dropdown-toggle:hover {
-    background-color: rgb(230, 230, 230);
+    background-color: rgb(35, 35, 35);
+}
+
+.dropdownMenuLink {
+    color: black;
 }
 
 .nav-link {
@@ -85,11 +89,10 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light {
 /* Media query to change navbar background colour upon reducing screen size*/
 @media(max-width:768px){
     div.container-fluid{
-        color: rgb(0, 0, 0);
+        color: rgb(35, 35, 35);
         background-color: rgb(35, 35, 35);
     }
 }
-
 
 .first image {
     float: left; 
@@ -99,7 +102,7 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light {
 .text {
     float: right;
 
-}
+} 
 
 img.logo {
   height: 90px;
@@ -109,4 +112,8 @@ img.logo {
   top: 240px;
   left: 0;
   right: 0;
+}
+
+.form-select {
+    color: grey;
 }
