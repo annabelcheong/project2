@@ -12,20 +12,15 @@ function BuildTable() {
         // console.log(data);
         var allData = data;
         var event_name = data.map(elem => elem.title);
-        // var sliced_name = event_name.slice(0,10)
-        // console.log(sliced_name)
         // console.log(event_name);
 
         var event_desc = data.map(elem => elem.description);
-        // var sliced_desc = event_desc.slice(0,10);
         // console.log(event_desc);
 
         var event_venue = data.map(elem => elem.venue_name);
-        // var sliced_venue = event_venue.slice(0,10);
         // console.log(event_venue);
 
         var event_addy = data.map(elem => elem.formatted_address);
-        // var sliced_addy = event_addy.slice(0,10);
         // console.log(event_addy);
 
         var event_cat = data.map(elem => elem.category);
@@ -34,25 +29,15 @@ function BuildTable() {
         var columns = [event_name, event_desc, event_venue, event_addy];
         // console.log(columns);
 
-        // pepare the table rows
-        data.forEach((dataRow) => {
-            // Append a row to the table body
-            const row = tbody.append("tr");
-        
-            // Loop through each field in the dataRow and add each value as a table cell (td)
-            Object.values(dataRow)
-             for (var i = 0; i < 25; i++) {
-                if (i === 10) { 
-                    break ; 
-                }
-                trow = tbody.append("tr");
-                trow.append("td").text(event_name[i]);
-                trow.append("td").text(event_desc[i]);
-                trow.append("td").text(event_venue[i]);
-                trow.append("td").text(event_addy[i]);
-            
-            };
-        });
+        // Loop through each field in the dataRow and add each value as a table cell (td)
+        for (var i = 0; i < 10; i++) {
+            trow = tbody.append("tr");
+            trow.append("td").text(event_name[i]);
+            trow.append("td").text(event_desc[i]);
+            trow.append("td").text(event_venue[i]);
+            trow.append("td").text(event_addy[i]);
+        };
+        // });
 
         // category dropdown event listener
         d3.select("#selCategory").on("change", function(selectedOption) {
@@ -63,7 +48,6 @@ function BuildTable() {
             console.log(filtData)
             updateTable(selectedOption);
         });
-
     });
 
     // Event Listener
@@ -114,23 +98,18 @@ function updateTable(){
         // Clear out what was in body before
         const tbody = d3.select("tbody");
         tbody.html("");
-
-        data.forEach((dataRow) => {          
-
-            // Append a row to the table body
-            const row = tbody.append("tr");
         
-            // Loop through each field in the dataRow and add each value as a table cell (td)
-            Object.values(dataRow)
-            for (var i = 0; i < 12; i++) {
-                trow = tbody.append("tr");
-                // trow.append("td").text(event_cat[i]);
-                trow.append("td").text(event_name[i]);
-                trow.append("td").text(event_desc[i]);
-                trow.append("td").text(event_venue[i]);
-                trow.append("td").text(event_addy[i]);
-            };
-        });
+        
+        // Loop through each field in the dataRow and add each value as a table cell (td)
+        // Object.values(dataRow)
+        for (var i = 0; i < 10; i++) {
+            trow = tbody.append("tr");
+            // trow.append("td").text(event_cat[i]);
+            trow.append("td").text(event_name[i]);
+            trow.append("td").text(event_desc[i]);
+            trow.append("td").text(event_venue[i]);
+            trow.append("td").text(event_addy[i]);
+        };
     });
 };
 
