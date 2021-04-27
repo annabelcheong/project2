@@ -54,6 +54,54 @@ function BuildTable() {
 
     });
 
+    // Event Listener
+    // Select the id show 
+    var show_entered = d3.select("#show");
+
+    // document.querySelector('#show').addEventListener('keypress', function (e) {
+    //     if (e.key === 'Enter') {
+          // code for enter
+        // }
+          
+    // Create event handlers
+    show_entered.on("keypress",runEnter);
+
+    function runEnter(e) {
+        // if (e.key === 'Enter') {
+        //     console.log("HELLO, enter has been pressed!")
+        console.log("hello")
+
+
+
+
+
+
+    };
+
+    
+
+    
+
+        
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 };
 
 function updateTable(){
