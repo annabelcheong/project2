@@ -150,7 +150,7 @@
                             <!-- <input type="text" id="demo">
                             <input type="text" id="start">
                             <input type="text" id="end"> -->
-                            <div id="litepicker"></div>
+                            <div id="datepicker"></div>
 
                            
                             
@@ -179,8 +179,15 @@
                     <div class="col-md-12">
                         <div class="container-fluid" margin-top: 40px style="background-color: rgb(255, 255, 255)">
                             <h4><br>ShowMap</h4><hr>
-                            <p> <br> This section will contain a full map of Australia with leaflet js marker clusters. When users filter a location by state, the map will zoom in to that area. Users can also zoom in on the map which will scatter the markers based on the events lats and longs. </p>
-                            <p> Event markers will have different colours according to event category. Each event will also have a popup containing event name and venue name. </p><br>
+                            <p> <br> <b>See upcoming show in Australia!</b> <br>
+                                Click on a marker on the map for event details, find a show and show up! <br>
+                                <br>
+                                <i>* When users filter a location by state, the map will zoom in to that area. </i>
+                            
+                            </p>
+                            <p> Event markers will have different colours according to event category. Each event will also have a popup containing event name, start date and category.  
+
+                            </p><br>
                               <!-- Map container -->
                               <div class="container-fluid" margin-top=20px margin-bottom=20px style="background-color: rgb(255, 255, 255)">
                                 <div id="map"></div>
@@ -275,6 +282,9 @@
 
         <!-- Calendar JS - Litepicker -->
         <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/litepicker.js"></script>
+
+        <!-- Bundle version - all plugins included -->
+        <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/bundle.js"></script>
 
  <!-- end of page content -->                  
     </body>

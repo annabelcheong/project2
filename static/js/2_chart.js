@@ -71,7 +71,7 @@ function BuildBubbleChart() {
             cat_venue_name = filtData.map(elem => elem.venue_name);
             //console.log(cat_venue_name); //Print array of venue names  based on filtered selectedGroup array
 
-            // pop-up text (title_name required)
+            // pop-up text (title required)
             cat_title_name = filtData.map(elem => elem.title);
             
             ///////////
@@ -82,7 +82,7 @@ function BuildBubbleChart() {
             var trace_cat = {
                 x: cat_date,
                 y: cat_venue_name,
-                text: rank,
+                text: cat_title_name,
                 mode: 'markers',
                 marker: {
                     size: rank_size,
@@ -127,6 +127,8 @@ function BuildBubbleChart() {
         // y-axis variable for category
         expo_venue_name = expo_data.map(elem => elem.venue_name);
 
+        // pop-up for category
+        expo_title_name = expo_data.map(elem => elem.title);
 
         ///////////////////////////////////
 
@@ -140,6 +142,9 @@ function BuildBubbleChart() {
         // y-axis variable for category
         conf_venue_name = conf_data.map(elem => elem.venue_name);
 
+        // pop-up for category
+        conf_title_name = conf_data.map(elem => elem.title);
+
         //////////////////////////////////
         //// Filtered array for category 'community'
         comm_data = data.filter(data => data.category == "community");
@@ -149,6 +154,10 @@ function BuildBubbleChart() {
         
         // y-axis variable for category
         comm_venue_name = comm_data.map(elem => elem.venue_name);
+
+        // pop-up for category
+        comm_title_name = comm_data.map(elem => elem.title);
+
 
         //////////////////////////////////
         //// Filtered array for category 'sports'
@@ -160,6 +169,10 @@ function BuildBubbleChart() {
         // y-axis variable for category
         sports_venue_name = sports_data.map(elem => elem.venue_name);
 
+        // pop-up for category
+        sports_title_name = sports_data.map(elem => elem.title);
+
+
         //////////////////////////////////
         //// Filtered array for category 'performing-arts'
         perf_data = data.filter(data => data.category == "sports");
@@ -169,6 +182,9 @@ function BuildBubbleChart() {
         
         // y-axis variable for category
         perf_venue_name = perf_data.map(elem => elem.venue_name);
+
+        // pop-up for category
+        perf_title_name = perf_data.map(elem => elem.title);
         
         //////////////////////////////////
         //// Filtered array for category 'festivals'
@@ -180,6 +196,9 @@ function BuildBubbleChart() {
         // y-axis variable for category
         fest_venue_name = fest_data.map(elem => elem.venue_name);
 
+        // pop-up for category
+        fest_title_name = fest_data.map(elem => elem.title);
+
         //////////////////////////////////
         //// Filtered array for category 'concerts'
         conc_data = data.filter(data => data.category == "concerts");
@@ -189,6 +208,9 @@ function BuildBubbleChart() {
         
         // y-axis variable for category
         conc_venue_name = conc_data.map(elem => elem.venue_name);
+
+        // pop-up for category
+        conc_title_name = conc_data.map(elem => elem.title);
 
 
 
@@ -222,7 +244,7 @@ function BuildBubbleChart() {
         var trace1 = {
             x: expo_date,
             y: expo_venue_name,
-            text: rank,  
+            text: expo_title_name,  
             // hover_info: rank,
             mode: 'markers',
             marker: {
@@ -237,7 +259,7 @@ function BuildBubbleChart() {
         var trace2 = {
             x: conf_date,
             y: conf_venue_name,            
-            text: title_name,  
+            text: conf_title_name,  
             mode: 'markers',
             marker: {
                 size: rank_size, 
@@ -251,7 +273,7 @@ function BuildBubbleChart() {
         var trace3 = {
             x: comm_date,
             y: comm_venue_name,
-            text: title_name,  
+            text: comm_title_name,  
             mode: 'markers',
             marker: {
                 size: rank_size, 
