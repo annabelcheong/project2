@@ -1,48 +1,56 @@
-function updateTable(){
-    console.log(filtData);
-  
-    d3.json('/api_events').then((data) => {
+/////////////////
+// Date Picker //
+/////////////////
 
-        var event_cat = filtData.map(elem => elem.category);
+// Initialise date range picker on input field 
+// index.html contains input element, in id="demo"
+const myPicker = new lightPick({
+    field: document.getElementById('demo'),
+    field: document.getElementById('start'),
+    secondField: document.getElementById('end'),
+    singleDate: false,
+    lang: 'en',
+    format: 'DD/MM/YYYY', // date format
+    numberOfMonths: 1, // number of months to display
+    startDate: null,
+    endDate: null,
+    // hideonBodyClick: true,
 
-        // console.log(data);
-        var event_name = filtData.map(elem => elem.title);
-        console.log(event_name);
-        var event_desc = filtData.map(elem => elem.description);
-        // console.log(event_desc);
-        var event_venue = filtData.map(elem => elem.venue_name);
-        // console.log(event_venue);
-        var event_addy = filtData.map(elem => elem.formatted_address);
-        // console.log(event_addy);
-        
-        var columns = [event_name, event_desc, event_venue, event_addy];
-        //console.log(columns);
+    dropdowns: {
+        years: {
+            min: 2021,
+            max: null,
+        },
+        months: true,
+    },
 
-        // Clear out what was in body before
-        const tbody = d3.select("tbody");
-        tbody.html("");
+    // localization
+    locale: {
+        buttons: {
+          prev: '←',
+          next: '→',
+          close: '×',
+          reset: 'Reset',
+          apply: 'Apply'
+        },
+    },
 
-        data.forEach((dataRow) => {
+    // callbacks
+    onSelect: null,
+    onOpen: null,
+    onClose: null,
 
+});
 
-            // Append a row to the table body
-            const row = tbody.append("tr");
-        
-            // Loop through each field in the dataRow and add
-            // each value as a table cell (td)
-            Object.values(dataRow)
-            for (var i = 0; i < 12; i++) {
-                trow = tbody.append("tr");
-                trow.append("td").text(event_cat[i]);
-                trow.append("td").text(event_name[i]);
-                trow.append("td").text(event_desc[i]);
-                trow.append("td").text(event_venue[i]);
-                trow.append("td").text(event_addy[i]);
-            };
-    
-        });
+// // Initialise library as single date picker
+// const myPicker = new lightPick({
+//     field: document.getElementById('demo'),
+//     singleDate: true // default: true (set to true)
+// });
 
-    });
-    
-
-};
+// Display date range using 2 input fields
+// index.html contains input element, in id="start", id="end"
+// const myPicker = new lightPick({
+//     field: document.getElementById('start'),
+//     secondField: document.getElementById('end')
+// });
