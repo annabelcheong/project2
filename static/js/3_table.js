@@ -32,7 +32,7 @@ function BuildTable() {
         
             // Loop through each field in the dataRow and add each value as a table cell (td)
             Object.values(dataRow)
-            for (var i = 0; i < 12; i++) {
+            for (var i = 0; i < 25; i++) {
                 trow = tbody.append("tr");
                 trow.append("td").text(event_name[i]);
                 trow.append("td").text(event_desc[i]);
@@ -76,59 +76,8 @@ function BuildTable() {
         if(d3.event.keyCode === 32) {
             console.log("Congrats, you pressed enter")
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             }
-
-
-
-
-
-
     };
-
-    
-
-    
-
-        
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 };
 
 function updateTable(){
