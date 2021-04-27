@@ -108,23 +108,12 @@
                         <div class="col-md">
                           <br>
                           <div class="dropdown category">
-                            <!-- <select class="form-select form-select-lg mb-4" aria-label=".form-select-lg example">
-                              <option selected>ShowType (select category)</option>
-                              <option value="community">community</option>
-                              <option value="concerts">concerts</option>
-                              <option value="conferences">conferences</option>
-                              <option value="expos">expos</option>
-                              <option value="festivals">festivals</option>
-                              <option value="performing arts">performing arts</option>
-                              <option value="sports">sports</option>
-                            </select> -->
-                              <!-- <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                ShowType (select show category)
-                              </a> -->
+                       
                               <label for="selCategory"><strong>ShowType (select show category)</strong></label>
+                              <!-- Dropdown menu and event listener -->
                               <select id="selCategory" onchange="updateBubbleChart(this.value)" class="btn btn-secondary dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <a>ShowType (select show category)</a>
                               </select>
+
                               <!-- <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                 <a class="dropdown-item" href="#">community</a>
                                 <a class="dropdown-item" href="#">concerts</a>
@@ -244,14 +233,17 @@
         <!-- Marker plugin -->
         <script type="text/javascript" src="https://unpkg.com/leaflet.markercluster@1.0.3/dist/leaflet.markercluster.js"></script>
 
+        <!-- Plotly -->
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
         <!-- Our API Key -->
         <script type="text/javascript" src="static/js/config.js"></script>
         
         <!-- Our JS -->
         <!-- <script type="text/javascript" src="static/js/0_logic.js"></script> -->
         <script type="text/javascript" src="static/js/1_ausMap.js"></script>
-        <!-- <script type="text/javascript" src="static/js/2_chart.js"></script> -->
-        <!-- <script type="text/javascript" src="static/js/3_table.js"></script> -->
+        <script type="text/javascript" src="static/js/2_chart.js"></script>
+        <script type="text/javascript" src="static/js/3_table.js"></script>
         
 
         <!-- Calendar js -->

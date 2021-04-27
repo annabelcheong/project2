@@ -36,7 +36,7 @@ function BuildBubbleChart() {
             
             var selectedOption = d3.select(this).property("value")
             console.log(selectedOption); //This works
-            //console.log(data); // This works but unexpected data returned
+            // console.log(data); // This works but unexpected data returned
     
             //console.log(title_name); // it reads
             filtData = allData.filter(allData => allData.category == selectedOption);
