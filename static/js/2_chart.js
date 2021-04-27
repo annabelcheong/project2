@@ -17,7 +17,7 @@ function BuildBubbleChart() {
         // DROP DOWN FOR CATEGORY
         ///////////////////////////
 
-        var catOptions = ["expos","conferences","community","sports","performing-arts","festivals","concerts"]
+        var catOptions = ["community","concerts","conferences","expos","festivals","performing-arts","sports"]
 
         d3.select("#selCategory")
         .selectAll('myOptions') //create class 
