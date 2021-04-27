@@ -1,7 +1,7 @@
 /////////////////
 // Date Picker //
 /////////////////
-
+console.log("hello")
 // Litepicker developed by Rinat G. 
 // https://litepicker.com/docs/options
 
@@ -18,4 +18,5 @@
 })
 
 console.log(picker.DateTime(new Date()) ); 
+picker.show();
 
