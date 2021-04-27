@@ -24,6 +24,10 @@ height: 100%;
     margin-left: 8%;
 }
 
+#bubble {
+    align-content: left;
+}
+
 h2 {
     color: rgb(35, 35, 35);
     font-weight: 700;
