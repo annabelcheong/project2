@@ -26,6 +26,13 @@ height: 100%;
 
 #bubble {
     align-content: left;
+    
+}
+
+#datepicker {
+    position: relative;
+    float: inline-start;
+    display: flex;
 }
 
 h2 {

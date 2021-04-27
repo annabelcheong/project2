@@ -9,11 +9,11 @@ console.log("hello")
   element: document.getElementById('datepicker'),
   singleMode: false,
   tooltipText: {
-    one: 'night',
-    other: 'nights'
+    one: 'day',
+    other: 'days'
   },
   tooltipNumber: (totalDays) => {
-    return totalDays - 1;
+    return totalDays;
   }
 })
 
