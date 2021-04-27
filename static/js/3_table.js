@@ -71,8 +71,8 @@ function BuildTable() {
         //     console.log("HELLO, enter has been pressed!")
         // console.log("hello")
         // key code = 32 (ENTER), key code = 13 (SPACE)
-        if(d3.event.keyCode === 32 || d3.event.keyCode === 13){
-            console.log("Congrats, you pressed enter or space!")
+        if(d3.event.keyCode === 32 {
+            console.log("Congrats, you pressed enter")
             }
 
 
