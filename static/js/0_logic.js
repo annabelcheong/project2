@@ -36,6 +36,30 @@ console.log("hello")
         let fin_date = new Date(date2.getTime()); //prints out the date
         console.log(st_date);
         console.log(fin_date);
+        
+        d3.json('/api_events').then((data) => {
+          console.log(data);
+          var allData = data;
+          console.log(allData);
+
+          // var datesData = allData.filter(function (a)
+          // {return (a.title) > st_date && (a.title) < fin_date;
+          // });
+          // console.log(datesData);
+
+
+
+          datesData = allData.filter(data => (data.start_date >= st_date) && (data.end_date <= fin_date));
+          console.log(datesData);
+        });
+
+        
+
+
+
+
+
+
       
       });
     },
