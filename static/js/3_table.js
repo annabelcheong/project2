@@ -60,37 +60,16 @@ function BuildTable() {
           });
       });
 
+       ///////////////////// 
+      // END OF: Show table on load
+      ///////////////////// 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  ///////////////////////////////////////////
+  // EVENT LISTENER FOR THE DATE SELECTION //
+  ///////////////////////////////////////////
 
   // This filters based on the calendar user dates selection (2 date clicks for the range)
   const picker = new Litepicker({
@@ -106,9 +85,6 @@ function BuildTable() {
       return totalDays;
     },
 
-    ///////////////////////////////////////////
-    // EVENT LISTENER FOR THE DATE SELECTION //
-    ///////////////////////////////////////////
     setup: (picker) => {
       picker.on('selected', (date1, date2) => {
         // Gets the user click start date and fin date
@@ -164,24 +140,16 @@ function BuildTable() {
           for (var i = 0; i < 10; i++) {
               trow = tbody.append("tr");
               trow.append("td").text(event_stDate[i]);// test row
-              // trow.append("td").text(events_cat[i]); // test row
+              trow.append("td").text(event_cat[i]); // test row
               trow.append("td").text(event_name[i]);
               trow.append("td").text(event_desc[i]);
               trow.append("td").text(event_venue[i]);
               trow.append("td").text(event_addy[i]);
           };
-          // });
+       
 
-          // category dropdown event listener
-          d3.select("#selCategory").on("change", function(selectedOption) {
-              
-              var selectedOption = d3.select(this).property("value")
-              console.log(selectedOption); 
-              filtData = datesData.filter(obj => (obj.category == selectedOption) );
-              console.log(filtData);
-              updateTable(selectedOption);
-          });
-      });
+
+      });//d3 close brackets for allData
 
 
         }); //Picker.on brackets (Litepicker plugin)
