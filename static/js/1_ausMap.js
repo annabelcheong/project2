@@ -63,7 +63,7 @@ d3.json(appRoute).then((data) => {
   // Pull data for locations
   // Coordinates are in one string, requiring to be split
   var splitCoords = coords.map(coordinates =>  coordinates.split(","));
-  console.log(splitCoords);
+  //console.log(splitCoords);
 
   // Create markers for cluster group
   var markers = L.markerClusterGroup();
