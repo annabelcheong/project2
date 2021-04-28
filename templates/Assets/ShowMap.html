@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>ShowUp - ShowMap</title>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <link rel="stylesheet" href="static/css/style.css"> 
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/litepicker/dist/css/litepicker.css"/> 
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+    integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+    crossorigin=""/>
+
+    <!-- Marker Cluster CSS -->
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.css">
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/leaflet.markercluster@1.0.3/dist/MarkerCluster.Default.css">
+
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script> 
+
+    </head>
+
+    <body style="background-color: rgb(255, 255, 255)">
+
+        <!-- navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid" >
+                <a class="navbar-brand" color: rgb(20, 20, 20) href="../templates/index.html">
+                <img class="navlogo" src="static/logo/Showup_Logo-02.png" style="display: inline-block;">
+                <!-- <span style="display: inline-block;">ShowUp</span> -->
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon" ></span>
+                </button>
+
+                <div class="collapse navbar-collapse"  id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto mb-2 mb-lg-0" > 
+                        <li class="nav-item">
+                        <a class="nav-link active" href="../templates/ShowMap.html">ShowMap</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="../templates/ShowChart.html">ShowChart</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="../templates/ShowTable.html">ShowTable</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- end of navbar -->
+
+        <!-- page content -->
+        <div class = "container">
+            <div class="row" style="padding-top: 20px;">
+                <div class="col-md-12">         
+                  
+                  <!-- Header (Hero Image) Section  -->
+                  <div id="carouselSlide" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img class="d-block w-100" src="https://www.cirquedusoleil.com/-/media/cds/images/shows/axel/hero/axel_hero_test_a_desktop_1920x710.jpg?db=web&la=en&vs=1&hash=55AB2E070A3C3EBAB5147086201564DF86833825" alt="First slide">
+                      </div>
+                      <img class="logo" src="static/logo/Showup Logo-03.png" >
+                    </div>
+                  </div>
+                  <!-- End Header Section -->
+
+                  <!-- Map Section -->
+                  <br>
+                  <div class="col-md-12">
+                    <div class="container-fluid" margin-top: 40px style="background-color: rgb(255, 255, 255)">
+                      <br>
+                      <h4><a href="../templates/ShowMap.html">ShowMap</a></h4><hr>
+                      <!-- <p><strong>See what shows are up!</strong> <br>  -->
+                        1. Select your location for the ShowMap to focus on your ShowState.<br>
+                        2. Zoom in and out of the ShowMap to see ShowLocations. <br>
+                        3. Click on a ShowMarker to view ShowInfo.
+                      </p>
+                      <!-- Filters section -->
+                      <!-- <br> -->
+                      <div class="container">
+                        <!-- <h2>Choose to filter by ShowType OR ShowDate (range) </h2> -->
+                        <div class="row align-items-center" >
+                          <!-- Location filter -->
+                          <div class="col-md">
+                            <br>
+                            <div class="dropdown state" >
+                              <!-- <label for="selState"><strong>ShowState (select show location)</strong></label> -->
+                              <!-- <select id="selState" onchange="updateBubbleChart(this.value)" class="btn btn-secondary dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a>ShowState (select show location)</a>
+                              </select> -->
+                              <a class="btn btn-secondary dropdown-toggle"  href="#" role="button" id="selState" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                ShowState (select show location)
+                              </a>
+                              <div class="dropdown-menu" aria-labelledby="selState">
+                                <a class="dropdown-item" href="#">ACT</a>
+                                <a class="dropdown-item" href="#">NSW</a>
+                                <a class="dropdown-item" href="#">NT</a>
+                                <a class="dropdown-item" href="#">QLD</a>
+                                <a class="dropdown-item" href="#">SA</a>
+                                <a class="dropdown-item" href="#">TAS</a>
+                                <a class="dropdown-item" href="#">VIC</a>
+                                <a class="dropdown-item" href="#">WA</a>
+                              </div>
+                            </div>
+                            <!-- End location filter -->
+                          </div>
+                      </div>
+                        <!-- End of Filters section -->
+
+                        <!-- <p> Event markers will have different colours according to event category. Each event will also have a popup containing event name, start date and category.  
+                        </p><br> -->
+                          <!-- Map container -->
+                          <br>
+                          <div class="container" margin-top=20px margin-bottom=20px style="background-color: rgb(255, 255, 255)">
+                            <div id="map"></div>
+                        </div>
+                        <br>        
+                    </div>
+                      <!-- <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+                      <link href="https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css" rel="stylesheet">
+                      <script src="https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js"></script> -->
+                    </div>
+                  <!-- End of Map section -->
+
+                </div>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+                <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+                <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  
+                <!-- Leaflet JS-->
+                <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
+                integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
+                crossorigin=""></script>
+  
+                <!-- config -->
+                <!-- <script type="text/javascript" src="static/js/config.js"></script> -->
+          
+                <!-- d3 JavaScript -->
+                <!-- <script src="https://d3js.org/d3.v4.min.js"></script> -->
+  
+                <!-- Marker plugin -->
+                <script type="text/javascript" src="https://unpkg.com/leaflet.markercluster@1.0.3/dist/leaflet.markercluster.js"></script>
+  
+                <!-- Plotly -->
+                <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  
+                <!-- Our API Key -->
+                <script type="text/javascript" src="static/js/config.js"></script>
+                
+                <!-- Calendar JS - Litepicker -->
+                <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/litepicker.js"></script>
+  
+                <!-- Bundle version - all plugins included -->
+                <script src="https://cdn.jsdelivr.net/npm/litepicker/dist/bundle.js"></script>
+  
+                <!-- Our JS -->
+                <!-- <script type="module" src="static/js/0_logic.js"></script> -->
+                <script type="text/javascript" src="static/js/1_ausMap.js"></script>
+                <script type="text/javascript" src="static/js/2_chart.js"></script>
+                <script type="text/javascript" src="static/js/3_table.js"></script>
+            </div>
+
+        </div>
+
+         <!-- end of page content -->                  
+    </body>
+
+</html>
