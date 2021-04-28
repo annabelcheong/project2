@@ -225,7 +225,7 @@ function runEnter() {
       // console.log(event_addy);
 
       // Loop through each field in the dataRow and add each value as a table cell (td)
-      for (var i = 0; i < 2; i++) {
+      for (var i = 0; i < 20; i++) {
           trow = tbody.append("tr");
           trow.append("td").text(event_stDate[i]);
           trow.append("td").text(event_cat[i]); 
