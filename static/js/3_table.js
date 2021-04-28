@@ -164,22 +164,62 @@ function BuildTable() {
     // EVENT LISTENER FOR SEARCH TITLE //
     /////////////////////////////////////
 
-    // Select the id show 
-    var show_entered = d3.select("#show");
-          
+    // // Select the id show 
+    // var show_entered = d3.select("#show");
+    
     // Create event handlers
     show_entered.on("keypress",runEnter);
 
-    function runEnter(e) {
+        //  //Get the value property of the input element
+        // var inputValue = show_entered.property("value");
+        // console.log(inputValue);
 
-        // Prevent the page from refreshing
-        d3.event.preventDefault();
+    function runEnter() {
 
-        console.log("hello the function is running")
-        // key code = 13 (ENTER), key code = 32 (SPACE)
+      console.log("hello");
+
+    // key code = 13 (ENTER), key code = 32 (SPACE)
         if(d3.event.keyCode === 13) {
             console.log("Congrats, you pressed enter")
+
+            // Prevent the page from refreshing
+            d3.event.preventDefault();
+
+            // Select the id show 
+            var show_entered = d3.select("#show");
+
+             //Get the value property of the input element
+            var inputValue = show_entered.property("value");
+            console.log(inputValue);
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             }
+
+      
+
+
+
+
+
+
     };
 
 
