@@ -8,6 +8,7 @@ console.log("hello")
   const picker = new Litepicker({
     element: document.getElementById('datepicker'),
     singleMode: false,
+    format: 'DD MMM YYYY',
     tooltipText: {
       one: 'day',
       other: 'days'
@@ -17,15 +18,30 @@ console.log("hello")
       return totalDays;
     },
 
+    // setup: (picker) => {
+    //         picker.on('show', () => {
+    //           let date = picker.getDate();
+    //           if (date) {
+    //             date.setMonth(date.getMonth());
+    //             picker.gotoDate(date);
+    //           };
+    //         });
+    // }
+
     setup: (picker) => {
-            picker.on('show', () => {
-              let date = picker.getDate();
-              if (date) {
-                date.setMonth(date.getMonth());
-                picker.gotoDate(date);
-              };
-            });
-    }
+      picker.on('selected', (date1, date2) => {
+        // some action
+        console.log("test string first");
+        let st_date = new Date(date1.getTime()); //prints out the date
+        let fin_date = new Date(date2.getTime()); //prints out the date
+        console.log(st_date);
+        console.log(fin_date);
+      
+      });
+    },
+
+
+
 
   });
 
