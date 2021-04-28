@@ -17,10 +17,10 @@ function BuildTable() {
           var allData = data;
 
           var event_stDate = allData.map(elem => new Date(elem.start_date) );//Test row
-          console.log(event_stDate); // This works
+          //console.log(event_stDate); // This works
 
           var event_name = allData.map(elem => elem.title);
-          console.log(event_name); // This works
+          //console.log(event_name); // This works
 
           var event_desc = allData.map(elem => elem.description);
           // console.log(event_desc);
@@ -32,7 +32,7 @@ function BuildTable() {
           // console.log(event_addy);
 
           var event_cat = allData.map(elem => elem.category);
-          console.log(event_cat); //this works
+          //console.log(event_cat); //this works
 
           var columns = [event_name, event_desc, event_venue, event_addy];
           // console.log(columns);
@@ -55,7 +55,7 @@ function BuildTable() {
               var selectedOption = d3.select(this).property("value")
               console.log(selectedOption); 
               filtData = datesData.filter(obj => (obj.category == selectedOption) );
-              console.log(filtData);
+              //console.log(filtData);
               updateTable(selectedOption);
           });
       });
@@ -116,10 +116,10 @@ function BuildTable() {
         console.log(datesData); //this works
 
           var event_stDate = datesData.map(elem => new Date(elem.start_date) );//Test row
-          console.log(event_stDate); // This works
+          //console.log(event_stDate); // This works
 
           var event_name = datesData.map(elem => elem.title);
-          console.log(event_name); // This works
+          //console.log(event_name); // This works
 
           var event_desc = datesData.map(elem => elem.description);
           // console.log(event_desc);
@@ -131,7 +131,7 @@ function BuildTable() {
           // console.log(event_addy);
 
           var event_cat = datesData.map(elem => elem.category);
-          console.log(event_cat); //this works
+          //console.log(event_cat); //this works
 
           var columns = [event_name, event_desc, event_venue, event_addy];
           // console.log(columns);

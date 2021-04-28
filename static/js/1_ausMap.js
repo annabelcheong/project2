@@ -50,7 +50,7 @@ var appRoute = 'api_events';
 d3.json(appRoute).then((data) => {
 
   // CHECK data is loaded
-  console.log(data);
+  //console.log(data);
 
   // The map will show coordinates and pop up showing: (1) title; (2) start date; (3) category type
   var coords = data.map(d => d.coords);
