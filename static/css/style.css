@@ -115,15 +115,23 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light {
 
 } 
 
-img.logo {
-  height: 90px;
-  position: absolute;
+.img.logo {
+  /* height: 180px; */
+  position: relative;
   margin: auto;
   display: block;
   top: 240px;
   left: 0;
   right: 0;
+  z-index: 597;
 }
+
+.img.navlogo {
+    position: fixed;
+    padding: 0px;
+    background: transparent;
+    overflow: hidden;
+  }
 
 .form-select {
     color: grey;
