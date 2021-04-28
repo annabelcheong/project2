@@ -196,29 +196,31 @@
                               Filter ShowType OR ShowDates above to view your ShowTable Top 10. <br>
                             </p>
                           
-                            <!-- Event Name, Event Description, Event Address. -->
+                          <!-- Event Name, Event Description, Event Address. -->
 
-                            <!-- SHOW TABLE FILTER (filter for show name) -->
-                            <div class="panel-body">
-                                <form>
-                                  <div class="form-group">
-                                    <ul class="list-group" id="filters">
-                                      <li class="filter list-group-item">
-                                        <label for="titleform">Type your ShowName:</label>
-                                        <input class="form-control" id="FilTitle" type="text" onkeyup="searchTitle()" title="Type in a name" placeholder="The Story of the Moving Image">
-                                      </li>
-                                    </ul>
-                                  </div>
-                                  <button id="titlefil" type="button" color="rgb(35, 35, 35)" class="btn btn-default"><strong>ShowUp</strong></button>
-                                </form>
-                                <br>
+                          <div class="panel-body">
+
+                            <!-- SHOW TABLE FILTER (filter for show name) --> 
+                            <form>
+                              <div class="form-group">
+                                <ul class="list-group" id="filters">
+                                  <li class="filter list-group-item">
+                                    <label for="showname">Enter a ShowName:</label>
+                                    <input class="form-control" id="show" type="text" placeholder="The Story of the Moving Image">
+                                  </li>
+                                </ul>
+                              </div>
+                            </form>
 
 
-                            <div id="table"></div>
+                            <!-- SHOW TABLE ALL INFO --> 
+
+                          <div id="table"></div>
                             <div class="col-md-12">
                               <div id="table-area" class="">
                                 <table id="events-table" class="table table-striped">
                                   <div class="table-responsive">
+
                                     <table class="table align-middle">
                                       <thead>
                                         <tr>
@@ -230,12 +232,21 @@
                                           <th class="table-head">ShowAddress</th>
                                         </tr>
                                       </thead>
+
                                       <tbody></tbody>
+
                                     </table>
+
                                   </div>  
                                 </table>
-                              </div>
+                              </div> 
                             </div>
+                           </div> 
+                          
+                           <!-- END OF TABLE -->
+
+
+
                          </div>  
                       </div> 
                 </div>

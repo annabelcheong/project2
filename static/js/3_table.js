@@ -175,9 +175,9 @@ function BuildTable() {
         // Prevent the page from refreshing
         d3.event.preventDefault();
 
-        // console.log("hello")
-        // key code = 32 (ENTER), key code = 13 (SPACE)
-        if(d3.event.keyCode === 32) {
+        console.log("hello the function is running")
+        // key code = 13 (ENTER), key code = 32 (SPACE)
+        if(d3.event.keyCode === 13) {
             console.log("Congrats, you pressed enter")
             }
     };
