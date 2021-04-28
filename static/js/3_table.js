@@ -165,7 +165,7 @@ function BuildTable() {
     /////////////////////////////////////
 
     // // Select the id show 
-    // var show_entered = d3.select("#show");
+    var show_entered = d3.select("#show");
     
     // Create event handlers
     show_entered.on("keypress",runEnter);
