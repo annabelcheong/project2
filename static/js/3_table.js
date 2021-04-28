@@ -41,7 +41,7 @@ function BuildTable() {
           for (var i = 0; i < 10; i++) {
               trow = tbody.append("tr");
               trow.append("td").text(event_stDate[i]);// test row
-              // trow.append("td").text(events_cat[i]); // test row
+              trow.append("td").text(event_cat[i]); // test row
               trow.append("td").text(event_name[i]);
               trow.append("td").text(event_desc[i]);
               trow.append("td").text(event_venue[i]);
@@ -140,7 +140,7 @@ function BuildTable() {
           for (var i = 0; i < 10; i++) {
               trow = tbody.append("tr");
               trow.append("td").text(event_stDate[i]);// test row
-              trow.append("td").text(event_cat[i]); // test row
+              trow.append("td").text(event_cat[i]); // test row 
               trow.append("td").text(event_name[i]);
               trow.append("td").text(event_desc[i]);
               trow.append("td").text(event_venue[i]);
@@ -215,6 +215,8 @@ function updateTable(){
   
     d3.json('/api_events').then((data) => {
 
+        var event_date = filtData.map(elem => elem.start_date);
+        // console.log(data);
         var event_cat = filtData.map(elem => elem.category);
         // console.log(data);
         var event_name = filtData.map(elem => elem.title);
@@ -238,7 +240,8 @@ function updateTable(){
         // Object.values(dataRow)
         for (var i = 0; i < 10; i++) {
             trow = tbody.append("tr");
-            // trow.append("td").text(event_cat[i]);
+            trow.append("td").text(event_date[i]);// test row
+            trow.append("td").text(event_cat[i]); 
             trow.append("td").text(event_name[i]);
             trow.append("td").text(event_desc[i]);
             trow.append("td").text(event_venue[i]);
