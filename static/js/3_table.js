@@ -160,53 +160,49 @@ function BuildTable() {
 
 } //BuildTable brackets
 
+    /////////////////////////////////////
+    // EVENT LISTENER FOR SEARCH TITLE //
+    /////////////////////////////////////
 
-    // // Event Listener
-    // // Select the id show 
-    // var show_entered = d3.select("#show");
-
-    // // document.querySelector('#show').addEventListener('keypress', function (e) {
-    // //     if (e.key === 'Enter') {
-    //       // code for enter
-    //     // }
+    // Select the id show 
+    var show_entered = d3.select("#show");
           
-    // // Create event handlers
-    // show_entered.on("keypress",runEnter);
+    // Create event handlers
+    show_entered.on("keypress",runEnter);
 
-    // function runEnter(e) {
+    function runEnter(e) {
 
-    //     // Prevent the page from refreshing
-    //     d3.event.preventDefault();
+        // Prevent the page from refreshing
+        d3.event.preventDefault();
 
-    //     // console.log("hello")
-    //     // key code = 32 (ENTER), key code = 13 (SPACE)
-    //     if(d3.event.keyCode === 32) {
-    //         console.log("Congrats, you pressed enter")
-
-    //         }
-    // };
+        // console.log("hello")
+        // key code = 32 (ENTER), key code = 13 (SPACE)
+        if(d3.event.keyCode === 32) {
+            console.log("Congrats, you pressed enter")
+            }
+    };
 
 
 
 // testing
-function searchTitle() {
-    var input, filter, table, tr, td, txtValue;
-    input = document.getElementById("FilTitle");
-    filter = input.value.toUpperCase();
-    table = document.getElementById("events-table");
-    tr = table.getElementsByTagName("tr");
-    for (var i = 0; i < 10; i++) {
-      td = tr[i].getElementsByTagName("td")[0];
-      if (td) {
-        txtValue = event_name;
-        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-          tr[i].style.display = "";
-        } else {
-          tr[i].style.display = "none";
-        }
-      }       
-    }
-  }
+// function searchTitle() {
+//     var input, filter, table, tr, td, txtValue;
+//     input = document.getElementById("FilTitle");
+//     filter = input.value.toUpperCase();
+//     table = document.getElementById("events-table");
+//     tr = table.getElementsByTagName("tr");
+//     for (var i = 0; i < 10; i++) {
+//       td = tr[i].getElementsByTagName("td")[0];
+//       if (td) {
+//         txtValue = event_name;
+//         if (txtValue.toUpperCase().indexOf(filter) > -1) {
+//           tr[i].style.display = "";
+//         } else {
+//           tr[i].style.display = "none";
+//         }
+//       }       
+//     }
+//   }
 // not working
 
 
