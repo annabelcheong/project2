@@ -32,7 +32,7 @@ console.log("hello")
 
 
 // console.log(picker.DateTime(new Date()) ); 
-picker.show();
+// picker.show();
 
 
 
@@ -81,4 +81,4 @@ picker.show();
     //   console.log(date1 + date2);
     // });
 
-picker.show()
+// picker.show()
