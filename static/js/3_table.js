@@ -5,7 +5,92 @@
 const tbody = d3.select("tbody");
 
 function BuildTable() {
-    
+  ///////////////////// 
+  // Show table on load
+  ///////////////////// 
+
+  // Clear everything in table
+  tbody.html("");
+
+      d3.json('/api_events').then((data) => {
+          // console.log(data);
+          var allData = data;
+
+          var event_stDate = allData.map(elem => new Date(elem.start_date) );//Test row
+          console.log(event_stDate); // This works
+
+          var event_name = allData.map(elem => elem.title);
+          console.log(event_name); // This works
+
+          var event_desc = allData.map(elem => elem.description);
+          // console.log(event_desc);
+
+          var event_venue = allData.map(elem => elem.venue_name);
+          // console.log(event_venue);
+
+          var event_addy = allData.map(elem => elem.formatted_address);
+          // console.log(event_addy);
+
+          var event_cat = allData.map(elem => elem.category);
+          console.log(event_cat); //this works
+
+          var columns = [event_name, event_desc, event_venue, event_addy];
+          // console.log(columns);
+
+          // Loop through each field in the dataRow and add each value as a table cell (td)
+          for (var i = 0; i < 10; i++) {
+              trow = tbody.append("tr");
+              trow.append("td").text(event_stDate[i]);// test row
+              // trow.append("td").text(events_cat[i]); // test row
+              trow.append("td").text(event_name[i]);
+              trow.append("td").text(event_desc[i]);
+              trow.append("td").text(event_venue[i]);
+              trow.append("td").text(event_addy[i]);
+          };
+          // });
+
+          // category dropdown event listener
+          d3.select("#selCategory").on("change", function(selectedOption) {
+              
+              var selectedOption = d3.select(this).property("value")
+              console.log(selectedOption); 
+              filtData = datesData.filter(obj => (obj.category == selectedOption) );
+              console.log(filtData);
+              updateTable(selectedOption);
+          });
+      });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   // This filters based on the calendar user dates selection (2 date clicks for the range)
   const picker = new Litepicker({
@@ -21,6 +106,9 @@ function BuildTable() {
       return totalDays;
     },
 
+    ///////////////////////////////////////////
+    // EVENT LISTENER FOR THE DATE SELECTION //
+    ///////////////////////////////////////////
     setup: (picker) => {
       picker.on('selected', (date1, date2) => {
         // Gets the user click start date and fin date
@@ -42,62 +130,62 @@ function BuildTable() {
         // });
         ///////////////////////
 
-    tbody.html("");
+      tbody.html("");
 
-    d3.json('/api_events').then((data) => {
-        // console.log(data);
-        var allData = data;
+      d3.json('/api_events').then((data) => {
+          // console.log(data);
+          var allData = data;
 
-      datesData = allData.filter(elem => (elem.start_date >= st_date) && (elem.end_date <= fin_date));
-      console.log(datesData); //this works
+        datesData = allData.filter(elem => (elem.start_date >= st_date) && (elem.end_date <= fin_date));
+        console.log(datesData); //this works
 
-        var event_stDate = datesData.map(elem => new Date(elem.start_date) );//Test row
-        console.log(event_stDate); // This works
+          var event_stDate = datesData.map(elem => new Date(elem.start_date) );//Test row
+          console.log(event_stDate); // This works
 
-        var event_name = datesData.map(elem => elem.title);
-        console.log(event_name); // This works
+          var event_name = datesData.map(elem => elem.title);
+          console.log(event_name); // This works
 
-        var event_desc = datesData.map(elem => elem.description);
-        // console.log(event_desc);
+          var event_desc = datesData.map(elem => elem.description);
+          // console.log(event_desc);
 
-        var event_venue = datesData.map(elem => elem.venue_name);
-        // console.log(event_venue);
+          var event_venue = datesData.map(elem => elem.venue_name);
+          // console.log(event_venue);
 
-        var event_addy = datesData.map(elem => elem.formatted_address);
-        // console.log(event_addy);
+          var event_addy = datesData.map(elem => elem.formatted_address);
+          // console.log(event_addy);
 
-        var event_cat = datesData.map(elem => elem.category);
-        console.log(event_cat); //this works
+          var event_cat = datesData.map(elem => elem.category);
+          console.log(event_cat); //this works
 
-        var columns = [event_name, event_desc, event_venue, event_addy];
-        // console.log(columns);
+          var columns = [event_name, event_desc, event_venue, event_addy];
+          // console.log(columns);
 
-        // Loop through each field in the dataRow and add each value as a table cell (td)
-        for (var i = 0; i < 10; i++) {
-            trow = tbody.append("tr");
-            trow.append("td").text(event_stDate[i]);// test row
-            // trow.append("td").text(events_cat[i]); // test row
-            trow.append("td").text(event_name[i]);
-            trow.append("td").text(event_desc[i]);
-            trow.append("td").text(event_venue[i]);
-            trow.append("td").text(event_addy[i]);
-        };
-        // });
+          // Loop through each field in the dataRow and add each value as a table cell (td)
+          for (var i = 0; i < 10; i++) {
+              trow = tbody.append("tr");
+              trow.append("td").text(event_stDate[i]);// test row
+              // trow.append("td").text(events_cat[i]); // test row
+              trow.append("td").text(event_name[i]);
+              trow.append("td").text(event_desc[i]);
+              trow.append("td").text(event_venue[i]);
+              trow.append("td").text(event_addy[i]);
+          };
+          // });
 
-        // category dropdown event listener
-        d3.select("#selCategory").on("change", function(selectedOption) {
-            
-            var selectedOption = d3.select(this).property("value")
-            console.log(selectedOption); 
-            filtData = datesData.filter(obj => (obj.category == selectedOption) );
-            console.log(filtData);
-            updateTable(selectedOption);
-        });
-    });
+          // category dropdown event listener
+          d3.select("#selCategory").on("change", function(selectedOption) {
+              
+              var selectedOption = d3.select(this).property("value")
+              console.log(selectedOption); 
+              filtData = datesData.filter(obj => (obj.category == selectedOption) );
+              console.log(filtData);
+              updateTable(selectedOption);
+          });
+      });
 
 
-      }); //Picker.on brackets (Litepicker plugin)
-    },  //setup brackets (Litepicker plugin)
+        }); //Picker.on brackets (Litepicker plugin)
+    },  //setup brackets *end of Calendar Event Listener (Litepicker plugin) 
   }); // picker brackets (Litepicker plugin)
 
 
