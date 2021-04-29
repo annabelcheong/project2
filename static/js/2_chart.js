@@ -45,7 +45,7 @@ function BuildBubbleChart() {
             // console.log(selectedGroup); //  Prints out the selectedGroup, which is selectedOption
             
             //// Filtered array for category 'selectedGroup' (expos, community, performing-arts, sports etc)
-            //console.log(filtData); // Prints array of info with categories filtered by selectedGroup
+            // console.log(filtData); // Prints array of info with categories filtered by selectedGroup
                         
             // x-axis variable for category
             cat_date = filtData.map(elem => elem.start_date = new Date(elem.start_date));
