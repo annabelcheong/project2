@@ -50,7 +50,7 @@ function BuildTable() {
           
           var selectedOption = d3.select(this).property("value")
           console.log(selectedOption); 
-          filtData = datesData.filter(obj => (obj.category == selectedOption) );
+          filtData = allData.filter(obj => (obj.category == selectedOption) );
           //console.log(filtData);
           updateTable(selectedOption);
       });
@@ -273,7 +273,7 @@ function updateTable(){
   
     d3.json('/api_events').then((data) => {
 
-        var event_date = filtData.map(elem => elem.start_date);
+        var event_date = filtData.map(elem => new Date(elem.start_date));
         // console.log(data);
         var event_cat = filtData.map(elem => elem.category);
         // console.log(data);

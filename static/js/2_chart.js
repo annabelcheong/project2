@@ -61,7 +61,7 @@ function BuildBubbleChart() {
             // Parse to numeric value '+'
             // Inversed the values to allow rank of 1 to be biggest in marker size, 100 to be smallest. 
             // Multiplied values by 1000 to get it to a reasonable size on chart.
-            var rank_size = data.map((elem) => elem.rank = 1/(+elem.rank)*1000);
+            var rank_size = filtData.map((elem) => elem.rank = 1/(+elem.rank)*1000);
             //console.log(rank_size);
                 
             ///////////
