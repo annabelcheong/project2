@@ -43,7 +43,6 @@ function BuildTable() {
           trow.append("td").text(event_venue[i]);
           trow.append("td").text(event_addy[i]);
       };
-      // });
 
       // category dropdown event listener
       d3.select("#selCategory").on("change", function(selectedOption) {
@@ -55,12 +54,9 @@ function BuildTable() {
           updateTable(selectedOption);
       });
   });
-
-       ///////////////////// 
+      ////////////////////// 
       // END OF: Show table on load
       ///////////////////// 
-
-
 
 
   ///////////////////////////////////////////
@@ -88,19 +84,7 @@ function BuildTable() {
         let st_date = new Date(date1.getTime()); //prints out the date
         let fin_date = new Date(date2.getTime()); //prints out the date
         console.log(st_date);
-        console.log(fin_date);
-        
-        ///////////////////////
-        // This section filters for the data depending on user selection
-        // d3.json('/api_events').then((data) => {
-        //   console.log(data);
-        //   var allData = data;
-        //   console.log(allData);
-
-        //   var datesData = allData.filter(elem => (elem.start_date >= st_date) && (elem.end_date <= fin_date));
-        //   console.log(datesData);
-        // });
-        ///////////////////////
+        console.log(fin_date); 
 
       tbody.html("");
 
@@ -142,18 +126,10 @@ function BuildTable() {
               trow.append("td").text(event_venue[i]);
               trow.append("td").text(event_addy[i]);
           };
-       
-
-
       });//d3 close brackets for allData
-
-
       }); //Picker.on brackets (Litepicker plugin)
     },  //setup brackets *end of Calendar Event Listener (Litepicker plugin) 
   }); // picker brackets (Litepicker plugin)
-
-
-
 } //BuildTable brackets
 
 /////////////////////////////////////
@@ -180,15 +156,11 @@ function runEnter() {
     // Select the id show 
     var show_entered = d3.select("#show");
 
-      //Get the value property of the input element
+    //Get the value property of the input element
     var inputValue = show_entered.property("value");
     console.log(inputValue);
 
-
-
     // Enter in code to filter and match and print table
-    
-
     tbody.html("");
 
     d3.json('/api_events').then((data) => {
@@ -234,38 +206,9 @@ function runEnter() {
           trow.append("td").text(event_venue[i]);
           trow.append("td").text(event_addy[i]);
       };
-    
-
-
-
     });
-  
   }; // End of if statement
-
 }; // End of function runEnter
-
-
-
-// testing
-// function searchTitle() {
-//     var input, filter, table, tr, td, txtValue;
-//     input = document.getElementById("FilTitle");
-//     filter = input.value.toUpperCase();
-//     table = document.getElementById("events-table");
-//     tr = table.getElementsByTagName("tr");
-//     for (var i = 0; i < 10; i++) {
-//       td = tr[i].getElementsByTagName("td")[0];
-//       if (td) {
-//         txtValue = event_name;
-//         if (txtValue.toUpperCase().indexOf(filter) > -1) {
-//           tr[i].style.display = "";
-//         } else {
-//           tr[i].style.display = "none";
-//         }
-//       }       
-//     }
-//   }
-// not working
 
 
 function updateTable(){
@@ -292,7 +235,6 @@ function updateTable(){
         // Clear out what was in body before
         const tbody = d3.select("tbody");
         tbody.html("");
-        
         
         // Loop through each field in the dataRow and add each value as a table cell (td)
         // Object.values(dataRow)
