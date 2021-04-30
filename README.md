@@ -1,7 +1,7 @@
 # Project 2
 
 ## 'ShowUp' ## 
-An event finder for all available events across the globe! 
+An event finder for all available events in Australia!
 
 *************************
 # Team Members
@@ -15,8 +15,8 @@ An event finder for all available events across the globe!
     * Python Flask, powered API, HTML/CSS, Javascript and the PostGres database.
     * A combination of Plotly and Leaflet.    
 - This project will have a dataset that contains more than 100 rows.
-- There will be a dashboard page which is interactive (dropdown) and is supported with data visualisations (including a custom D3 non-standard chart, js library *not covered in the Data Analytics course, e.g. https://christinecha.github.io/choreographer-js/), created with the user in mind.
-- The dashboard will also contain a visualisation with 3 views (info panel, charts, and map).
+- There will be a dashboard page which is interactive (dropdown) and is supported with data visualisations (including a custom D3 non-standard chart, js library or plug in not covered in the Data Analytics course, created with the user in mind.
+- The dashboard will also contain a visualisation with 3 views (e.g. map, chart and table).
 
 *************************
 # Project Overview
