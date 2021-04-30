@@ -21,7 +21,6 @@
 
   </head>
 
-
   <body style="background-color: rgb(255, 255, 255)">
     
     <!-- navbar -->
@@ -42,13 +41,13 @@
         <div class="collapse navbar-collapse"  id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto mb-2 mb-lg-0" > 
             <li class="nav-item">
-            <a class="nav-link" href="../templates/Assets/ShowMap.html">ShowMap</a>
+            <a class="nav-link" href="/ShowMap">ShowMap</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="../templates/Assets/ShowChart.html">ShowChart</a>
+            <a class="nav-link" href="/ShowChart">ShowChart</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="../templates/Assets/ShowTable.html">ShowTable</a>
+            <a class="nav-link" href="/ShowTable">ShowTable</a>
             </li>
           </ul>
         </div>
@@ -74,61 +73,21 @@
           </div>
           <!-- End Header Section -->
 
-
           <!-- Map Section -->
           <br>
           <div class="col-md-12">
             <div class="container-fluid" margin-top: 40px style="background-color: rgb(255, 255, 255)">
               <br>
-              <h4><a href="../templates/ShowMap.html">ShowMap</a></h4><hr>
-                  <!-- <p><strong>See what shows are up!</strong> <br>  -->
-              <p>
-                1. Select your location for the ShowMap to focus on your ShowState.<br>
-                2. Zoom in and out of the ShowMap to see ShowLocations. <br>
-                3. Click on a ShowMarker to view ShowInfo.
-              </p>
-                        <!-- Filters section -->
-                        <!-- <br> -->
-              <div class="container">
-                <!-- <h2>Choose to filter by ShowType OR ShowDate (range) </h2> -->
-                <div class="row align-items-center" >
-                  <!-- Location filter -->
-                  <div class="col-md">
-                    <br>
-                    <div class="dropdown state" >
-                      <!-- <label for="selState"><strong>ShowState (select show location)</strong></label> -->
-                      <!-- <select id="selState" onchange="updateBubbleChart(this.value)" class="btn btn-secondary dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <a>ShowState (select show location)</a>
-                      </select> -->
-                      <a class="btn btn-secondary dropdown-toggle"  href="#" role="button" id="selState" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        ShowState (select show location)
-                      </a>
-                      <div class="dropdown-menu" aria-labelledby="selState">
-                        <a class="dropdown-item" href="#">ACT</a>
-                        <a class="dropdown-item" href="#">NSW</a>
-                        <a class="dropdown-item" href="#">NT</a>
-                        <a class="dropdown-item" href="#">QLD</a>
-                        <a class="dropdown-item" href="#">SA</a>
-                        <a class="dropdown-item" href="#">TAS</a>
-                        <a class="dropdown-item" href="#">VIC</a>
-                        <a class="dropdown-item" href="#">WA</a>
-                      </div>
-                    </div>
-                    <!-- End location filter -->
-                  </div>
-                </div>
-              </div> 
-                <!-- End of Filters section -->
-
-                <!-- <p> Event markers will have different colours according to event category. Each event will also have a popup containing event name, start date and category.  
-                </p><br> -->
+              <h4><a href="/ShowMap">ShowMap</a></h4><hr>
+                <p><b>ShowLocations</b> are displayed interactively on the ShowMap.</p>
+                <p>Zoom in and out to view <b>ShowClusters</b>. Click on a <b>ShowMarker</b> to view <b>ShowInfo</b>.</p>
+                </p>
                 <!-- Map container -->
                 <br>
                 <div class="container" margin-top=20px margin-bottom=20px style="background-color: rgb(255, 255, 255)">
                   <div id="map"></div>
                 </div>
                 <br>        
-                
                 <!-- <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
                 <link href="https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css" rel="stylesheet">
                 <script src="https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js"></script> -->
@@ -136,104 +95,90 @@
           </div>
           <!-- End of Map section -->
 
-
           <!-- Bubble Chart section -->
           <br>
           <div class="col-md-12">
             <div class="container-fluid" margin-top: 40px style="background-color: rgb(255, 255, 255)">
 
-              <h4><a href="../templates/ShowChart.html">ShowChart</a></h4><hr>
-              <p>ShowBubbles represent show rankings. The bigger the bubble, the better the ShowRank!
-              </p>
-              <!-- Filters section -->
-              <div class="container">
+              <h4><a href="/ShowChart">ShowChart</a></h4><hr>
+              <p><b>ShowBubbles</b> represent show rankings in the ShowChart.</p> 
+              <p>The bigger the bubble, the better the <b>ShowRank</b>!</p>
+              <br>
+                <!-- Filters section -->
                 <div class="row justify-content-center">
-                  <!-- Category filter -->
-                  <div class="col-5">
-                    <br>
+                    <!-- Category filter -->
+                    <div class="col-4">
                     <div class="dropdown category">
-
-                      <label for="selCategory"><strong>ShowType (select show category)</strong></label>
-                      <!-- Dropdown menu and event listener -->
-                      <select id="selCategory" onchange="updateBubbleChart(this.value)" class="btn btn-secondary dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      </select>
-
+                        <label for="selCategory"><strong>ShowType (select show category)</strong></label>
+                        <!-- Dropdown menu and event listener -->
+                        <select id="selCategory" onchange="updateBubbleChart(this.value)" class="btn btn-secondary dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        </select>
                     </div>
-                    
-                  </div>
-                  <!-- End category filter --> 
-
-                  <!-- Calendar Filter -->
-                  <div class="col-5">
-                    <br>
+                    </div>
+                    <!-- End category filter --> 
+                    <!-- Calendar Filter -->
+                    <div class="col-4">
                     <div class="dropdown calendar" class="w-50 p-3">
-                      <label for="selDate"><strong>ShowDate (select from calendar)</strong></label>
-                      <button id="datepicker" class="btn btn-secondary dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">select date</button>
+                        <label for="selDate"><strong>ShowDate (select from calendar)</strong></label>
+                        <button id="datepicker" class="btn btn-secondary dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">select date</button>
                     </div>
+                    </div>
+                    <!-- End calendar filter -->
                   </div>
-                  <!-- End calendar filter -->
-
-                </div>
-              </div>
-                  <!-- End of Filters section -->
-
+                <!-- End of Filters section -->
                 <div id="bubble"></div>
             </div>
           </div>
           <!-- End of Buble Chart section -->
 
-
           <!-- Table section -->
           <br>
           <div class="col-md-12">
             <div class="container-fluid" margin-top: 40px style="background-color: rgb(255, 255, 255)">
-              
-              <h4><a href="../templates/ShowTable.html">ShowTable</a></h4><hr>
-                <p>Select your ShowType OR ShowDates above to view 10 shows in your ShowTable.</p>
-                <!-- Show Title Filter --> 
-                <div class="panel-body">
-                  <form>
+            <h4><a href="/ShowTable">ShowTable</a></h4><hr>
+              <p><b>ShowDetails</b> are displayed in the ShowTable.</p>
+              <p>Enter a <strong>ShowName</strong> below for a particular show or filter by <strong>ShowType</strong> or <strong>ShowDate</strong> for a list of 10 shows.</p>
+              <!-- Show Title Filter --> 
+              <div class="panel-body">
+                <form>
                     <div class="form-group">
-                      <ul class="list-group" id="filters">
-                        <li class="filter list-group-item">
-                          <label for="date">Type ShowName:</label>
-                          <input class="form-control" id="show" type="text" placeholder="The Story of the Moving Image">
-                        </li>
-                      </ul>
+                        <ul class="list-group" id="filters">
+                            <li class="filter list-group-item">
+                            <label for="date">Type ShowName:</label>
+                            <input class="form-control" id="show" type="text" placeholder="The Story of the Moving Image">
+                            </li>
+                        </ul>
                     </div>
                     <!-- <button id="filter-btn" type="button" class="btn btn-default">Filter Table</button> -->
-                  </form>
+                </form>
+              </div>
+              <!-- End of Title filter -->
+              <!-- Table List --> 
+              <div id="table">                  
+              </div>
+                <div class="col-md-12">
+                  <div id="table-area" class="">
+                    <table id="events-table" class="table table-striped">
+                      <div class="table-responsive">
+                        <table class="table align-middle">
+                          <thead>
+                            <tr>
+                              <th class="table-head">ShowDate</th>
+                              <th class="table-head">ShowType</th>
+                              <th class="table-head">ShowName</th>
+                              <th class="table-head">ShowDescription</th>
+                              <th class="table-head">ShowVenue</th>
+                              <th class="table-head">ShowAddress</th>
+                            </tr>
+                          </thead>
+                          <tbody></tbody>
+                        </table>
+                      </div>  
+                    </table>
+                  </div> 
                 </div>
-                <!-- End of Title filter -->
-                <!-- Table section --> 
-                <div id="table">                  
-                </div>
-
-                  <div class="col-md-12">
-                    <div id="table-area" class="">
-                      <table id="events-table" class="table table-striped">
-                        <div class="table-responsive">
-                          <table class="table align-middle">
-                            <thead>
-                              <tr>
-                                <th class="table-head">ShowDate</th>
-                                <th class="table-head">ShowType</th>
-                                <th class="table-head">ShowName</th>
-                                <th class="table-head">ShowDescription</th>
-                                <th class="table-head">ShowVenue</th>
-                                <th class="table-head">ShowAddress</th>
-                              </tr>
-                            </thead>
-                            <tbody></tbody>
-                          </table>
-                        </div>  
-                      </table>
-                    </div> 
-                  </div>
-
             </div>
           </div> 
-
         </div>    
             <!-- End of Table -->
 
