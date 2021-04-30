@@ -1,20 +1,5 @@
 // Logic for the map containing markers of events 
 
-// Logic for calendar dropdown
-// var picker = new Lightpick({
-//   field: document.getElementById('dropdown-calendar'),
-//   singleDate: false,
-//   minDate: moment().startOf('month').add(7, 'day'),
-//   maxDate: moment().endOf('month').subtract(7, 'day'),
-//   onSelect: function(start, end){
-//       var str = '';
-//       str += start ? start.format('Do MMMM YYYY') + ' to ' : '';
-//       str += end ? end.format('Do MMMM YYYY') : '...';
-//       document.getElementById('result-6').innerHTML = str;
-//   }
-// });
-
-
 // Creating map object
 // * Co-ordinates and zoom show Australia
 // Australia LatLong: [-26.853387500000004, 133.27515449999999]
@@ -89,17 +74,3 @@ var myMap = L.map("map", {
   
   });
   
-  
-  // // Loop through the cities array and create one marker for each city object
-  // for (var i = 0; i < cities.length; i++) {
-  //   L.circle(cities[i].location, {
-  //     fillOpacity: 0.75,
-  //     color: "white",
-  //     fillColor: "purple",
-  //     // Setting our circle's radius equal to the output of our markerSize function
-  //     // This will make our marker's size proportionate to its population
-  //     radius: markerSize(cities[i].population)
-  //   }).bindPopup("<h1>" + cities[i].name + "</h1> <hr> <h3>Population: " + cities[i].population + "</h3>").addTo(myMap);
-  // }
-  
-  // });

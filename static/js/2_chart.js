@@ -365,9 +365,9 @@ function BuildBubbleChart() {
 
         var data = [trace1, trace2, trace3, trace4, trace5, trace7];
 
-        //////////////
+        ////////////
         // LAYOUT //
-        //////////////
+        ////////////
 
         var layout = {
             xaxis:{title:"Date", automargin: true},
