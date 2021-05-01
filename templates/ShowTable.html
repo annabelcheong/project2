@@ -60,10 +60,33 @@
                         <div class="container-fluid" margin-top: 40px style="background-color: rgb(255, 255, 255)">
                             <h4><a href="/ShowTable">ShowTable</a></h4><hr>
                             <p><b>ShowDetails</b> are displayed in the ShowTable.</p>
-                            <p>Enter a <strong>ShowName</strong> below for a particular show or filter by <strong>ShowType</strong> or <strong>ShowDate</strong> for a list of 10 shows.</p>
+                            <p>Filter by <strong>ShowType</strong> or <strong>ShowDate</strong> for a list of 10 shows or Enter a <strong>ShowName</strong> below for a particular show.</p>
                             <!-- Filters section -->
                             <div class="container">
+                                
+                                <br>
+                                <div class="row justify-content-center">
+                                    <!-- Calendar Filter -->
+                                    <div class="col-5">
+                                    <div class="dropdown calendar" class="w-50 p-3">
+                                        <label for="selDate"><strong>ShowDate (select from calendar)</strong></label>
+                                        <button id="datepicker" class="btn btn-secondary dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">select date</button>
+                                    </div>
+                                    </div>
+                                    <!-- End calendar filter -->
+                                    <!-- Category filter -->
+                                    <div class="col-5">
+                                        <div class="dropdown category">
+                                            <label for="selCategory"><strong>ShowType (select show category)</strong></label>
+                                            <!-- Dropdown menu and event listener -->
+                                            <select id="selCategory" onchange="updateBubbleChart(this.value)" class="btn btn-secondary dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <!-- End category filter --> 
+                                </div>
                                 <!-- Show Title Filter --> 
+                                <br>
                                 <div class="panel-body">
                                     <form>
                                         <div class="form-group">
@@ -78,27 +101,6 @@
                                     </form>
                                 </div>
                                 <!-- End of Title filter -->
-                                <br>
-                                <div class="row justify-content-center">
-                                    <!-- Category filter -->
-                                    <div class="col-5">
-                                    <div class="dropdown category">
-                                        <label for="selCategory"><strong>ShowType (select show category)</strong></label>
-                                        <!-- Dropdown menu and event listener -->
-                                        <select id="selCategory" onchange="updateBubbleChart(this.value)" class="btn btn-secondary dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        </select>
-                                    </div>
-                                    </div>
-                                    <!-- End category filter --> 
-                                    <!-- Calendar Filter -->
-                                    <div class="col-5">
-                                    <div class="dropdown calendar" class="w-50 p-3">
-                                        <label for="selDate"><strong>ShowDate (select from calendar)</strong></label>
-                                        <button id="datepicker" class="btn btn-secondary dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">select date</button>
-                                    </div>
-                                    </div>
-                                    <!-- End calendar filter -->
-                                </div>
                             </div>
                             <!-- End of Filters section -->
                             
