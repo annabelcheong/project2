@@ -16,13 +16,13 @@ app = Flask(__name__)
 # Database Setup
 #################################################
 ## HEROKU - app deployment
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql' + os.environ.get('DATABASE_URL', '')[8:]  
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql' + os.environ.get('DATABASE_URL', '')[8:]  
 # # or "sqlite:///db.sqlite"
 
 # # Remove tracking modifications
-# app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-# db = SQLAlchemy(app)
+db = SQLAlchemy(app)
 
 ####################### END POINTS #######################
 # END POINT: HOME
