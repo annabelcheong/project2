@@ -81,6 +81,11 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light {
     border-color: rgb(35, 35, 35);
 }
 
+#selCategory {
+    background-color: rgb(35, 35, 35);
+    color:rgb(255, 255, 255);
+}
+
 .dropdown-toggle:hover {
     background-color: rgb(35, 35, 35);
 }
